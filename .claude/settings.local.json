@@ -17,7 +17,15 @@
       "Bash(cp \"/Users/kristinruck/Govtech prototypes/assets/govbb-framework.js\" \"/Users/kristinruck/govbb prototypes/assets/govbb-framework.js\")",
       "Bash(cp \"/Users/kristinruck/Govtech prototypes/assets/govbb-base.css\" \"/Users/kristinruck/govbb prototypes/assets/govbb-base.css\")",
       "Bash(cp \"/Users/kristinruck/Govtech prototypes/assets/govbb-tailwind-config.js\" \"/Users/kristinruck/govbb prototypes/assets/govbb-tailwind-config.js\")",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(pandoc \"/Users/kristinruck/govbb prototypes/service pattern documents/NISSS service patterns/NIS - Educational Status Form.docx\" -t plain)",
+      "Bash(cd /Users/kristinruck/govbb prototypes/service pattern documents/NISSS service patterns)",
+      "Bash(unzip -q \"Old Age Contributory Pension.docx\" -d /tmp/docx_extract)",
+      "Read(//tmp/docx_extract/word/**)",
+      "Read(//private/tmp/**)",
+      "Bash(unzip -q \"/Users/kristinruck/govbb prototypes/service pattern documents/NISSS service patterns/NIS - Educational Status Form.docx\" -d docx_content)",
+      "Bash(pandoc \"/Users/kristinruck/govbb prototypes/service pattern documents/NISSS service patterns/Old Age Contributory Pension.docx\" -t plain)",
+      "Bash(grep -n \"container py-l\" prototypes/*.html index.html)"
     ]
   }
 }
