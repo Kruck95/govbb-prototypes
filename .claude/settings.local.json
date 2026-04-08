@@ -25,7 +25,8 @@
       "Read(//private/tmp/**)",
       "Bash(unzip -q \"/Users/kristinruck/govbb prototypes/service pattern documents/NISSS service patterns/NIS - Educational Status Form.docx\" -d docx_content)",
       "Bash(pandoc \"/Users/kristinruck/govbb prototypes/service pattern documents/NISSS service patterns/Old Age Contributory Pension.docx\" -t plain)",
-      "Bash(grep -n \"container py-l\" prototypes/*.html index.html)"
+      "Bash(grep -n \"container py-l\" prototypes/*.html index.html)",
+      "WebFetch(domain:kruck95.github.io)"
     ]
   }
 }
