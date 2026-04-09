@@ -13,26 +13,26 @@
   <style>
     /* Applicant email preview styles */
     .email-wrapper { background:#fff; overflow:hidden; }
-    .email-header-bar { background:#ffc726; padding:32px 64px; }
-    .email-content { background:#fff; padding:32px 64px; display:flex; flex-direction:column; gap:16px; }
+    .email-header-bar { background:#ffc726; padding:32px 128px; }
+    .email-content { background:#fff; padding:32px 128px; display:flex; flex-direction:column; gap:16px; }
     .email-h1 { font-size:56px; font-weight:700; line-height:1.15; color:#000; margin:0; }
     .email-greeting { font-size:20px; color:#000; margin:0; }
     .email-body { font-size:20px; color:#000; line-height:1.5; margin:0; }
     .ref-box { background:#ace6e9; padding:24px 16px; display:flex; flex-direction:column; gap:16px; }
-    .ref-number { font-size:40px; font-weight:700; line-height:1.25; color:#00267f; margin:0; }
-    .ref-sub { font-size:20px; color:#000; margin:0; }
-    .payment-box { background:rgba(224,228,233,0.4); padding:24px 16px; display:flex; flex-direction:column; gap:8px; }
-    .payment-heading { font-size:24px; font-weight:700; color:#00267f; margin:0; }
+    .ref-number { font-size:40px; font-weight:700; line-height:1.25; color:#00267f; margin:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .ref-sub { font-size:20px; color:#000; margin:0; line-height:1.5; }
+    .payment-box { background:rgba(224,228,233,0.22); padding:24px 16px; display:flex; flex-direction:column; gap:8px; }
+    .payment-heading { font-size:24px; font-weight:700; line-height:1.25; color:#00267f; margin:0; white-space:nowrap; }
     .payment-body { font-size:20px; color:#000; line-height:1.5; margin:0; }
-    .next-section { padding:24px 0; display:flex; flex-direction:column; gap:8px; }
-    .next-heading { font-size:40px; font-weight:700; color:#000; margin:0; }
+    .next-section { padding:24px 16px; display:flex; flex-direction:column; gap:8px; }
+    .next-heading { font-size:40px; font-weight:700; line-height:1.25; color:#000; margin:0; white-space:nowrap; }
     .next-list { list-style:disc; padding-left:30px; display:flex; flex-direction:column; gap:8px; margin:0; }
     .next-list li { font-size:20px; color:#000; line-height:1.5; }
-    .email-footer-bar { background:#00267f; color:#fff; padding:32px 64px; display:flex; align-items:flex-start; gap:32px; }
-    .email-footer-text { flex:1; font-size:20px; line-height:1.5; display:flex; flex-direction:column; gap:16px; }
+    .email-footer-bar { background:#00267f; color:#fff; padding:32px 128px; display:flex; align-items:flex-start; gap:32px; }
+    .email-footer-text { width:891px; flex-shrink:0; font-size:20px; line-height:1.5; display:flex; flex-direction:column; gap:16px; }
     .email-footer-text p { margin:0; }
-    .email-footer-right { display:flex; flex-direction:column; align-items:flex-end; gap:12px; flex-shrink:0; }
-    .email-footer-right img { width:80px; height:auto; }
+    .email-footer-right { flex:1 0 0; display:flex; flex-direction:column; align-items:flex-end; padding-top:16px; }
+    .email-footer-right img { width:104px; height:112px; }
     .email-footer-copy { font-size:20px; color:#fff; white-space:nowrap; margin:0; }
     /* MDA email preview styles */
     .mda-email { background:#fff; }
@@ -410,7 +410,7 @@ const PAGES = {
             <p class="email-body">Thank you for submitting your application. Your payment has been processed successfully and your application is now being reviewed.</p>
             <div class="ref-box">
               <p class="ref-number">Reference Number: ${ref}</p>
-              <p class="ref-sub">Please keep this reference number for tracking and follow-up.</p>
+              <p class="ref-sub">Please retain this reference number for tracking and follow-up purposes.</p>
             </div>
             <div class="payment-box">
               <p class="payment-heading">Payment Details</p>
