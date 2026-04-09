@@ -10,6 +10,66 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../assets/govbb-tailwind-config.js"></script>
   <link rel="stylesheet" href="../assets/govbb-base.css">
+  <style>
+    /* Applicant email preview styles */
+    .email-wrapper { background:#fff; overflow:hidden; }
+    .email-header-bar { background:#ffc726; padding:32px 64px; }
+    .email-content { background:#fff; padding:32px 64px; display:flex; flex-direction:column; gap:16px; }
+    .email-h1 { font-size:56px; font-weight:700; line-height:1.15; color:#000; margin:0; }
+    .email-greeting { font-size:20px; color:#000; margin:0; }
+    .email-body { font-size:20px; color:#000; line-height:1.5; margin:0; }
+    .ref-box { background:#ace6e9; padding:24px 16px; display:flex; flex-direction:column; gap:16px; }
+    .ref-number { font-size:40px; font-weight:700; line-height:1.25; color:#00267f; margin:0; }
+    .ref-sub { font-size:20px; color:#000; margin:0; }
+    .payment-box { background:rgba(224,228,233,0.4); padding:24px 16px; display:flex; flex-direction:column; gap:8px; }
+    .payment-heading { font-size:24px; font-weight:700; color:#00267f; margin:0; }
+    .payment-body { font-size:20px; color:#000; line-height:1.5; margin:0; }
+    .next-section { padding:24px 0; display:flex; flex-direction:column; gap:8px; }
+    .next-heading { font-size:40px; font-weight:700; color:#000; margin:0; }
+    .next-list { list-style:disc; padding-left:30px; display:flex; flex-direction:column; gap:8px; margin:0; }
+    .next-list li { font-size:20px; color:#000; line-height:1.5; }
+    .email-footer-bar { background:#00267f; color:#fff; padding:32px 64px; display:flex; align-items:flex-start; gap:32px; }
+    .email-footer-text { flex:1; font-size:20px; line-height:1.5; display:flex; flex-direction:column; gap:16px; }
+    .email-footer-text p { margin:0; }
+    .email-footer-right { display:flex; flex-direction:column; align-items:flex-end; gap:12px; flex-shrink:0; }
+    .email-footer-right img { width:80px; height:auto; }
+    .email-footer-copy { font-size:20px; color:#fff; white-space:nowrap; margin:0; }
+    /* MDA email preview styles */
+    .mda-email { background:#fff; }
+    .mda-header { background:#ffc726; padding:24px 32px; }
+    .mda-content { background:#fff; padding:64px 32px 32px; display:flex; flex-direction:column; gap:32px; }
+    .mda-h1 { font-size:40px; font-weight:700; line-height:1.15; color:#000; margin:0; }
+    .mda-summary-table { background:#e5e9f2; }
+    .mda-summary-row { display:flex; align-items:stretch; border-bottom:1px solid #fff; }
+    .mda-summary-row:last-child { border-bottom:1px solid #e5e9f2; }
+    .mda-summary-label { width:304px; flex-shrink:0; padding:8px; font-weight:700; font-size:20px; }
+    .mda-summary-value { flex:1; padding:8px 8px 8px 16px; font-size:20px; }
+    .mda-payment-banner { background:#a5e5ce; padding:16px; display:flex; flex-direction:column; gap:8px; font-size:20px; }
+    .mda-payment-row { display:flex; gap:8px; align-items:center; }
+    .mda-intro { font-size:20px; color:#000; margin:0; }
+    .mda-sections { display:flex; flex-direction:column; gap:35px; }
+    .mda-section-h2 { font-size:40px; font-weight:700; line-height:1.25; color:#000; margin-bottom:8px; }
+    .mda-declaration-text { font-size:20px; color:#000; padding:8px 0 12px; margin:0; }
+    .mda-data-table { width:100%; }
+    .mda-data-row { display:flex; align-items:stretch; border-bottom:1px solid #e0e4e9; }
+    .mda-data-label { width:304px; flex-shrink:0; padding:8px; font-weight:700; font-size:20px; }
+    .mda-data-value { flex:1; padding:8px 8px 8px 16px; font-size:20px; color:#595959; font-style:italic; }
+    .mda-internal-box { background:#e5e9f2; padding:16px; display:flex; flex-direction:column; gap:8px; }
+    .mda-internal-box p { font-size:20px; font-weight:700; color:#000; margin:0; }
+    .mda-internal-box .fv { font-weight:400; color:#595959; font-style:italic; }
+    .mda-footer { background:#00267f; color:#fff; padding:32px; display:flex; align-items:flex-start; justify-content:space-between; gap:32px; }
+    .mda-footer-text { flex:1; font-size:20px; line-height:1.5; display:flex; flex-direction:column; gap:16px; }
+    .mda-footer-text p { margin:0; }
+    .mda-footer-right { display:flex; flex-direction:column; align-items:flex-end; gap:12px; flex-shrink:0; }
+    .mda-footer-right img { width:80px; height:auto; }
+    .mda-footer-copyright { font-size:20px; color:#fff; white-space:nowrap; margin:0; }
+    /* Email page chrome */
+    .eml-page-badge { display:inline-flex; align-items:center; gap:6px; background:#fff9e9; border:1.5px solid #ffc726; border-radius:4px; padding:6px 14px; font-size:14px; font-weight:600; color:#000; }
+    .mda-page-badge { display:inline-flex; align-items:center; gap:6px; background:#e5e9f2; border:1.5px solid #99a8cc; border-radius:4px; padding:6px 14px; font-size:14px; font-weight:600; color:#000; }
+    .eml-page-label { font-size:14px; font-weight:600; color:#595959; text-transform:uppercase; letter-spacing:0.05em; margin:0; }
+    .eml-page-title { font-size:28px; font-weight:700; color:#000; margin-bottom:8px; }
+    .eml-page-desc { font-size:16px; color:#595959; margin-bottom:24px; }
+  </style>
 </head>
 <body>
 
@@ -240,44 +300,45 @@ const PAGES = {
     return `
     <div class="space-y-6">
       ${GovBB.backLink()}
-      <span style="display:inline-flex;align-items:center;gap:6px;background:#fff9e9;border:1.5px solid #ffc726;border-radius:4px;padding:6px 14px;font-size:14px;font-weight:600;color:#000;">✉ Email preview – sent to applicant</span>
-      <h1 class="font-bold text-[3.5rem] leading-[1.15]">Applicant confirmation email</h1>
-      <p class="text-[1.25rem] text-bb-mid-grey-00">This is the confirmation email sent to the applicant after they submit the Educational Status Form.</p>
+      <div class="eml-page-badge">&#9993; Applicant email &mdash; NIS Educational Status Form</div>
+      <p class="eml-page-label">Email Templates / Applicant Emails</p>
+      <h1 class="eml-page-title">NIS Educational Status Form &mdash; Applicant Confirmation</h1>
+      <p class="eml-page-desc">Sent to the applicant after they submit the NIS Educational Status Form.</p>
       <div style="background:#f2f4f6;padding:32px 0;">
-        <div style="background:#fff;max-width:700px;margin:0 auto;">
-          <div style="background:#ffc726;padding:24px 32px;">${_LOGO}</div>
-          <div style="background:#fff;padding:64px 32px 32px;display:flex;flex-direction:column;gap:32px;">
-            <h1 style="font-size:56px;font-weight:700;line-height:1.15;color:#000;margin:0;">NIS Educational Status Form Submission</h1>
-            <p style="font-size:20px;color:#000;margin:0;">Dear ${D['first-name'] || '[First Name]'},</p>
-            <p style="font-size:20px;color:#000;line-height:1.5;margin:0;">Thank you for submitting your application. We have received it and it is now being reviewed.</p>
-            <div style="background:#ace6e9;padding:24px 16px;display:flex;flex-direction:column;gap:16px;">
-              <p style="font-size:20px;font-weight:700;color:#000;margin:0;">Reference Number: ${ref}</p>
-              <p style="font-size:16px;color:#000;margin:0;">Please keep this reference number for tracking and follow-up.</p>
+        <div class="email-wrapper">
+          <div class="email-header-bar">${_LOGO}</div>
+          <div class="email-content">
+            <h1 class="email-h1">NIS Educational Status Form Submission</h1>
+            <p class="email-greeting">Dear ${D['first-name'] || '[First Name]'},</p>
+            <p class="email-body">Thank you for submitting your application. We have received it and it is now being reviewed.</p>
+            <div class="ref-box">
+              <p class="ref-number">Reference Number: ${ref}</p>
+              <p class="ref-sub">Please keep this reference number for tracking and follow-up.</p>
             </div>
-            <div style="padding:24px 0;display:flex;flex-direction:column;gap:12px;">
-              <p style="font-size:24px;font-weight:700;color:#000;margin:0;">What Happens Next?</p>
-              <ul style="list-style:disc;padding-left:30px;display:flex;flex-direction:column;gap:8px;margin:0;">
-                <li style="font-size:20px;color:#000;line-height:1.5;">Your educational status will be verified by NIS.</li>
-                <li style="font-size:20px;color:#000;line-height:1.5;">Allow 5–10 business days for processing.</li>
-                <li style="font-size:20px;color:#000;line-height:1.5;">Benefit payments for your dependant may be affected if the status cannot be verified.</li>
+            <div class="next-section">
+              <p class="next-heading">What Happens Next?</p>
+              <ul class="next-list">
+                <li>Your educational status will be verified by NIS.</li>
+                <li>Allow 5&ndash;10 business days for processing.</li>
+                <li>Benefit payments for your dependant may be affected if the status cannot be verified.</li>
               </ul>
             </div>
           </div>
-          <div style="background:#00267f;color:#fff;padding:32px;display:flex;align-items:flex-start;justify-content:space-between;gap:32px;">
-            <div style="flex:1;font-size:20px;line-height:1.5;display:flex;flex-direction:column;gap:16px;">
-              <p style="margin:0;">This is an automated confirmation email from the Government of Barbados.</p>
-              <p style="margin:0;">If you have any questions about your application, please contact the NIS and include your reference number: <strong>${ref}</strong></p>
-              <p style="margin:0;">Please do not reply to this email.</p>
+          <div class="email-footer-bar">
+            <div class="email-footer-text">
+              <p>This is an automated confirmation email from the Government of Barbados.</p>
+              <p>If you have any questions about your application, please contact the NIS and include your reference number: <strong>${ref}</strong></p>
+              <p>Please do not reply to this email.</p>
             </div>
-            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex-shrink:0;">
-              <img src="${_COAT}" alt="Coat of arms" style="width:80px;height:auto;">
-              <p style="font-size:20px;color:#fff;white-space:nowrap;margin:0;">&copy; 2025 Government of Barbados</p>
+            <div class="email-footer-right">
+              <img src="${_COAT}" alt="Coat of arms">
+              <p class="email-footer-copy">&copy; 2025 Government of Barbados</p>
             </div>
           </div>
         </div>
       </div>
       ${GovBB.continueBtn('See MDA email')}
-    </div>`;
+    </div>\`;
   },
 
   'mda-email': () => {
@@ -291,89 +352,89 @@ const PAGES = {
     const min = String(today.getMinutes()).padStart(2,'0');
     const subDate = `${dd}/${mm}/${yyyy}`;
     const subTime = `${hh}:${min}`;
-    const fullName = [D['first-name'], D['middle-name'], D['last-name']].filter(Boolean).join(' ') || '[Student name]';
-    const dobDate = (D['dob-day'] && D['dob-month'] && D['dob-year']) ? `${D['dob-day']}/${D['dob-month']}/${D['dob-year']}` : '—';
-    const enrolDate = (D['enrolment-date-day'] && D['enrolment-date-month'] && D['enrolment-date-year']) ? `${D['enrolment-date-day']}/${D['enrolment-date-month']}/${D['enrolment-date-year']}` : '—';
-    const termFrom = (D['term-from-day'] && D['term-from-month'] && D['term-from-year']) ? `${D['term-from-day']}/${D['term-from-month']}/${D['term-from-year']}` : '—';
-    const termTo = (D['term-to-day'] && D['term-to-month'] && D['term-to-year']) ? `${D['term-to-day']}/${D['term-to-month']}/${D['term-to-year']}` : '—';
+    const dobDate = (D['dob-day'] && D['dob-month'] && D['dob-year']) ? `${D['dob-day']}/${D['dob-month']}/${D['dob-year']}` : '&mdash;';
+    const enrolDate = (D['enrolment-date-day'] && D['enrolment-date-month'] && D['enrolment-date-year']) ? `${D['enrolment-date-day']}/${D['enrolment-date-month']}/${D['enrolment-date-year']}` : '&mdash;';
+    const termFrom = (D['term-from-day'] && D['term-from-month'] && D['term-from-year']) ? `${D['term-from-day']}/${D['term-from-month']}/${D['term-from-year']}` : '&mdash;';
+    const termTo = (D['term-to-day'] && D['term-to-month'] && D['term-to-year']) ? `${D['term-to-day']}/${D['term-to-month']}/${D['term-to-year']}` : '&mdash;';
     const signDate = (D['signed-date-day'] && D['signed-date-month'] && D['signed-date-year']) ? `${D['signed-date-day']}/${D['signed-date-month']}/${D['signed-date-year']}` : subDate;
-    const row = (label, value) => `<div style="display:flex;align-items:stretch;border-bottom:1px solid #fff;"><div style="width:304px;flex-shrink:0;padding:8px;font-weight:700;font-size:20px;color:#000;">${label}</div><div style="flex:1;padding:8px 8px 8px 16px;font-size:20px;color:#595959;font-style:italic;">${value || '—'}</div></div>`;
-    const sectionHead = (title) => `<h2 style="font-size:40px;font-weight:700;line-height:1.25;color:#000;margin:0 0 8px 0;">${title}</h2>`;
+    const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
     return `
     <div class="space-y-6">
       ${GovBB.backLink()}
-      <span style="display:inline-flex;align-items:center;gap:6px;background:#e5e9f2;border:1.5px solid #99a8cc;border-radius:4px;padding:6px 14px;font-size:14px;font-weight:600;color:#000;">✉ Email preview – sent to National Insurance Office</span>
-      <h1 class="font-bold text-[3.5rem] leading-[1.15]">MDA notification email</h1>
-      <p class="text-[1.25rem] text-bb-mid-grey-00">This is the notification email sent to the National Insurance Office when a form is submitted.</p>
+      <div class="mda-page-badge">&#9993; MDA email template &mdash; NIS Educational Status</div>
+      <p class="eml-page-label">Email Templates / MDA Emails</p>
+      <h1 class="eml-page-title">MDA Submission Email &mdash; NIS Educational Status Form</h1>
+      <p class="eml-page-desc">Sent to the NIS when an educational institution submits a student's NIS Educational Status Form. Shows the submission details and the full form data.</p>
       <div style="background:#f2f4f6;padding:32px 0;">
-        <div style="background:#fff;max-width:700px;margin:0 auto;">
-          <div style="background:#ffc726;padding:24px 32px;">${_LOGO}</div>
-          <div style="background:#fff;padding:64px 32px 32px;display:flex;flex-direction:column;gap:32px;">
-            <h1 style="font-size:40px;font-weight:700;line-height:1.15;color:#000;margin:0;">You have received a NIS Educational Status Form submission</h1>
-            <div style="background:#e5e9f2;">
-              ${row('Service:', 'NIS Educational Status Form')}
-              ${row('Submission ID:', ref)}
-              ${row('Submission date:', subDate)}
-              ${row('Submission time:', subTime)}
-              ${row('Student phone number:', D['tel'] || D['cell'] || '—')}
-              <div style="display:flex;align-items:stretch;border-bottom:1px solid #e5e9f2;"><div style="width:304px;flex-shrink:0;padding:8px;font-weight:700;font-size:20px;color:#000;">Student email:</div><div style="flex:1;padding:8px 8px 8px 16px;font-size:20px;color:#595959;font-style:italic;">${D['email'] || '—'}</div></div>
+        <div class="mda-email">
+          <div class="mda-header">${_LOGO}</div>
+          <div class="mda-content">
+            <h1 class="mda-h1">You have received a NIS Educational Status Form submission</h1>
+            <div class="mda-summary-table">
+              <div class="mda-summary-row"><div class="mda-summary-label">Service:</div><div class="mda-summary-value">NIS Educational Status Form</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission ID:</div><div class="mda-summary-value">${ref}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission date:</div><div class="mda-summary-value">${subDate}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission time:</div><div class="mda-summary-value">${subTime}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Student phone number:</div><div class="mda-summary-value">${D['tel'] || D['cell'] || '&mdash;'}</div></div>
+              <div class="mda-summary-row" style="border-bottom:1px solid #e5e9f2;"><div class="mda-summary-label">Student email:</div><div class="mda-summary-value">${D['email'] || '&mdash;'}</div></div>
             </div>
-            <p style="font-size:20px;color:#000;margin:0;">Here is the data from this request:</p>
-            <div style="display:flex;flex-direction:column;gap:35px;">
+            <p class="mda-intro">Here is the data from this request:</p>
+            <div class="mda-sections">
               <div>
-                ${sectionHead('Declaration')}
-                <div style="width:100%;">
-                  ${row('Institution signatory name', D['signatory-name'])}
-                  ${row('Position or title', D['signatory-title'])}
-                  ${row('Date signed', signDate)}
+                <h2 class="mda-section-h2">Declaration</h2>
+                <p class="mda-declaration-text">The educational institution confirms that the student details below are true and correct.</p>
+                <div class="mda-data-table">
+                  ${dr('Institution signatory name', D['signatory-name'])}
+                  ${dr('Position or title', D['signatory-title'])}
+                  ${dr('Date signed', signDate)}
                 </div>
               </div>
               <div>
-                ${sectionHead('Student details')}
-                <div style="width:100%;">
-                  ${row('National Insurance number', D['nis-number'])}
-                  ${row('National Registration Number', D['nrn'])}
-                  ${row('Last name', D['last-name'])}
-                  ${row('First name', D['first-name'])}
-                  ${row('Middle name(s)', D['middle-name'])}
-                  ${row('Home address', D['address'])}
-                  ${row('District', D['district'])}
-                  ${row('Parish', D['parish'])}
-                  ${row('Postal code', D['postal-code'])}
-                  ${row('Email address', D['email'])}
-                  ${row('Telephone number', D['tel'])}
-                  ${row('Mobile number', D['cell'])}
-                  ${row('Date of birth', dobDate)}
+                <h2 class="mda-section-h2">Student details</h2>
+                <div class="mda-data-table">
+                  ${dr('National Insurance number', D['nis-number'])}
+                  ${dr('National Registration Number', D['nrn'])}
+                  ${dr('Last name', D['last-name'])}
+                  ${dr('First name', D['first-name'])}
+                  ${dr('Middle name(s)', D['middle-name'])}
+                  ${dr('Home address', D['address'])}
+                  ${dr('District', D['district'])}
+                  ${dr('Parish', D['parish'])}
+                  ${dr('Postal code', D['postal-code'])}
+                  ${dr('Email address', D['email'])}
+                  ${dr('Telephone number', D['tel'])}
+                  ${dr('Mobile number', D['cell'])}
+                  ${dr('Date of birth', dobDate)}
                 </div>
               </div>
               <div>
-                ${sectionHead('Institution details')}
-                <div style="width:100%;">
-                  ${row('Name of educational institution', D['institution-name'])}
-                  ${row('Institution address', D['institution-address'])}
-                  ${row('Country', D['institution-country'])}
-                  ${row('Standard of education', D['education-level'])}
-                  ${row('Enrolled and attending full-time?', D['enrolled-fulltime'])}
-                  ${row('Date of enrolment', enrolDate)}
-                  ${row('Term start date', termFrom)}
-                  ${row('Term end date', termTo)}
+                <h2 class="mda-section-h2">Institution details</h2>
+                <div class="mda-data-table">
+                  ${dr('Name of educational institution', D['institution-name'])}
+                  ${dr('Institution address', D['institution-address'])}
+                  ${dr('Country', D['institution-country'])}
+                  ${dr('Standard of education', D['education-level'])}
+                  ${dr('Enrolled and attending full-time?', D['enrolled-fulltime'])}
+                  ${dr('Date of enrolment', enrolDate)}
+                  ${dr('Term start date', termFrom)}
+                  ${dr('Term end date', termTo)}
                 </div>
               </div>
-              <div style="background:#e5e9f2;padding:16px;display:flex;flex-direction:column;gap:8px;">
-                <p style="font-size:20px;font-weight:700;color:#000;margin:0;">Due date: <span style="font-weight:400;color:#595959;font-style:italic;">[To be filled by officer]</span></p>
-                <p style="font-size:20px;font-weight:700;color:#000;margin:0;">Officer assigned: <span style="font-weight:400;color:#595959;font-style:italic;">[To be filled by officer]</span></p>
-                <p style="font-size:20px;font-weight:700;color:#000;margin:0;">Reference: <span style="font-weight:400;color:#595959;font-style:italic;">[To be filled by officer]</span></p>
+              <div class="mda-internal-box">
+                <p>Due date: <span class="fv">[To be filled by officer]</span></p>
+                <p>Officer assigned: <span class="fv">[To be filled by officer]</span></p>
+                <p>Reference: <span class="fv">[To be filled by officer]</span></p>
               </div>
             </div>
           </div>
-          <div style="background:#00267f;color:#fff;padding:32px;display:flex;align-items:flex-start;justify-content:space-between;gap:32px;">
-            <div style="flex:1;font-size:20px;line-height:1.5;display:flex;flex-direction:column;gap:16px;">
-              <p style="margin:0;">This is an automated confirmation email from the Government of Barbados.</p>
-              <p style="margin:0;">Please <strong>do not reply</strong> to this email.</p>
+          <div class="mda-footer">
+            <div class="mda-footer-text">
+              <p>This is an automated confirmation email from the Government of Barbados.</p>
+              <p>Please <strong>do not reply</strong> to this email.</p>
             </div>
-            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex-shrink:0;">
-              <img src="${_COAT}" alt="Coat of arms" style="width:80px;height:auto;">
-              <p style="font-size:20px;color:#fff;white-space:nowrap;margin:0;">&copy; 2025 Government of Barbados</p>
+            <div class="mda-footer-right">
+              <img src="${_COAT}" alt="Coat of arms">
+              <p class="mda-footer-copyright">&copy; 2025 Government of Barbados</p>
             </div>
           </div>
         </div>
@@ -381,7 +442,7 @@ const PAGES = {
       <a href="../index.html" class="inline-flex outline-none underline-offset-2 underline hover:no-underline active:bg-bb-yellow-100 active:no-underline focus-visible:bg-bb-yellow-100 focus-visible:no-underline active:text-bb-black-00 focus-visible:text-bb-black-00 text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10 text-[1.25rem]">
         Return to all forms
       </a>
-    </div>`;
+    </div>\`;
   }
 
 };
