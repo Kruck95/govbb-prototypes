@@ -477,7 +477,7 @@ function validate(pageId) {
     if (!D['signatory-name']) errors.push({ id: 'signatory-name', msg: 'Your name – Enter your full name' });
     if (!D['signatory-title']) errors.push({ id: 'signatory-title', msg: 'Your title – Enter your position or title' });
     if (!D['signed-date-day'] || !D['signed-date-month'] || !D['signed-date-year']) errors.push({ id: 'signed-date-day', msg: 'Date signed – Enter the date you are signing this form' });
-    if (!D['confirm']) errors.push({ id: 'confirm-checkbox', msg: 'Declaration – You must confirm the information is correct' });
+    if (!D['declaration-agree']) errors.push({ id: 'declaration-agree', msg: 'Declaration – You must confirm the information is correct' });
   }
 
   return errors;
