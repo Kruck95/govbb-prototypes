@@ -26,7 +26,11 @@
       "Bash(unzip -q \"/Users/kristinruck/govbb prototypes/service pattern documents/NISSS service patterns/NIS - Educational Status Form.docx\" -d docx_content)",
       "Bash(pandoc \"/Users/kristinruck/govbb prototypes/service pattern documents/NISSS service patterns/Old Age Contributory Pension.docx\" -t plain)",
       "Bash(grep -n \"container py-l\" prototypes/*.html index.html)",
-      "WebFetch(domain:kruck95.github.io)"
+      "WebFetch(domain:kruck95.github.io)",
+      "Bash(gh run:*)",
+      "Read(//Users/kristinruck/**)",
+      "Bash(pandoc \"/Users/kristinruck/govbb prototypes/service pattern documents/NISSS service patterns/Self-Employment Registration.docx\" -t plain)",
+      "Bash(grep -n \"emailField\\\\|email.*Optional\\\\|Optional.*email\\\\|hint.*Optional\" *.html)"
     ]
   }
 }
