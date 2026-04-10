@@ -107,7 +107,10 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     })
-    .then(function (r) { return r.json(); })
+    .then(function (r) {
+      if (!r.ok) throw new Error('Server error ' + r.status);
+      return r.json();
+    })
     .then(function (data) {
       if (data && data.referenceNumber) window.__refNumber = data.referenceNumber;
       cb();
