@@ -59,7 +59,7 @@
 <script>
 const FORM_NAME = 'Request for Name Search and Name Reservation';
 
-const FLOW = ['start', 'eligibility', 'requester-details', 'names-criteria', 'check', 'declaration', 'confirmation'];
+const FLOW = ['start', 'eligibility', 'requester-details', 'names-criteria', 'check', 'declaration', 'confirmation', 'applicant-email', 'mda-email'];
 
 const PAGES = {
   'start': () => `
@@ -233,8 +233,140 @@ const PAGES = {
         </ul>
         <p class="text-[1.25rem]">Keep your reference number in case you need to follow up.</p>
         <a href="#" onclick="GovBB.nav('start'); return false;" class="inline-flex outline-none underline-offset-2 underline hover:no-underline active:bg-bb-yellow-100 active:no-underline focus-visible:bg-bb-yellow-100 focus-visible:no-underline active:text-bb-black-00 focus-visible:text-bb-black-00 text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10 text-[1.25rem]">Return to start</a>
+        ${GovBB.continueBtn('See emails sent')}
       </div>
-    </div>`
+    </div>`,
+
+  'applicant-email': () => {
+    const D = GovBB.D;
+    const ref = window.__refNumber || 'SNS-XXXXXX';
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2,'0');
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const yyyy = today.getFullYear();
+    const subDate = `${dd}/${mm}/${yyyy}`;
+    return `
+    <div class="space-y-6">
+      ${GovBB.backLink()}
+      <div class="eml-page-badge">&#9993; Applicant email &mdash; Request for Name Search and Name Reservation</div>
+      <p class="eml-page-label">Email Templates / Applicant Emails</p>
+      <h1 class="eml-page-title">Request for Name Search and Name Reservation &mdash; Applicant Confirmation</h1>
+      <p class="eml-page-desc">Sent to the applicant after they submit the Society with Restricted Liability Name Search form.</p>
+      <div style="background:#f2f4f6;padding:32px 0;">
+        <div class="email-wrapper">
+          <div class="email-header-bar">${_LOGO}</div>
+          <div class="email-content">
+            <h1 class="email-h1">Application received</h1>
+            <p class="email-greeting">Dear ${D['requester-name'] || '[Name]'},</p>
+            <p class="email-body">Thank you for submitting your Society with Restricted Liability Name Search (Form 15) through the Government of Barbados online portal. We have received your application.</p>
+            <div class="ref-box">
+              <p class="ref-number">Reference Number: ${ref}</p>
+              <p class="ref-sub">Please keep this reference number for your records.</p>
+            </div>
+            <div class="next-section">
+              <p class="next-heading">What Happens Next?</p>
+              <ul class="next-list">
+                <li>A CAIPO officer will search the register for your proposed SRL name.</li>
+                <li>You will be told within 3 working days whether your proposed name is available.</li>
+                <li>If approved, the name will be reserved for a limited period.</li>
+                <li>You must complete your SRL registration within the reservation period.</li>
+                <li>Keep your reference number safe in case you need to follow up.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="email-footer-bar">
+            <div class="email-footer-text">
+              <p>This is an automated confirmation email from the Government of Barbados.</p>
+              <p>If you have any questions, please contact us and include your reference number: <strong>${ref}</strong></p>
+              <p>Please do not reply to this email.</p>
+            </div>
+            <div class="email-footer-right">
+              <img src="${_COAT}" alt="Coat of arms">
+              <p class="email-footer-copy">&copy; 2025 Government of Barbados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      ${GovBB.continueBtn('See MDA email')}
+    </div>`;
+  },
+
+  'mda-email': () => {
+    const D = GovBB.D;
+    const ref = window.__refNumber || 'SNS-XXXXXX';
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2,'0');
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const yyyy = today.getFullYear();
+    const hh = String(today.getHours()).padStart(2,'0');
+    const min = String(today.getMinutes()).padStart(2,'0');
+    const subDate = `${dd}/${mm}/${yyyy}`;
+    const subTime = `${hh}:${min}`;
+    const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
+    return `
+    <div class="space-y-6">
+      ${GovBB.backLink()}
+      <div class="mda-page-badge">&#9993; MDA email template &mdash; Request for Name Search and Name Reservation</div>
+      <p class="eml-page-label">Email Templates / MDA Emails</p>
+      <h1 class="eml-page-title">MDA Submission Email &mdash; Request for Name Search and Name Reservation</h1>
+      <p class="eml-page-desc">Sent to CAIPO when a citizen submits the Society with Restricted Liability Name Search form.</p>
+      <div style="background:#f2f4f6;padding:32px 0;">
+        <div class="mda-email">
+          <div class="mda-header">${_LOGO}</div>
+          <div class="mda-content">
+            <h1 class="mda-h1">You have received a Society with Restricted Liability Name Search submission</h1>
+            <div class="mda-summary-table">
+              <div class="mda-summary-row"><div class="mda-summary-label">Service:</div><div class="mda-summary-value">Request for Name Search and Name Reservation</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission ID:</div><div class="mda-summary-value">${ref}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission date:</div><div class="mda-summary-value">${subDate}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission time:</div><div class="mda-summary-value">${subTime}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Applicant email:</div><div class="mda-summary-value">${D['contact-email'] || '&mdash;'}</div></div>
+            </div>
+            <p class="mda-intro">Here is the data from this request:</p>
+            <div class="mda-sections">
+              <p class="mda-section-h2">Proposed name details</p>
+              <div class="mda-data-table">
+                ${dr('Proposed SRL name (1st choice)', D['name-a'])}
+                ${dr('Proposed SRL name (2nd choice)', D['name-b'])}
+                ${dr('Proposed SRL name (3rd choice)', D['name-c'])}
+                ${dr('Type of business (a)', D['business-type-a'])}
+                ${dr('Type of business (b)', D['business-type-b'])}
+                ${dr('Type of business (c)', D['business-type-c'])}
+                ${dr('Derivation of name', D['derivation'])}
+                ${dr('Name reserved for', D['name-reserved-for'])}
+              </div>
+              <p class="mda-section-h2">Applicant details</p>
+              <div class="mda-data-table">
+                ${dr('Full name', D['requester-name'])}
+                ${dr('Address', D['street-address'])}
+                ${dr('Parish', D['parish'])}
+                ${dr('Telephone', D['telephone'])}
+                ${dr('Email address', D['contact-email'])}
+              </div>
+              <div class="mda-internal-box">
+                <p>Due date: <span class="fv">[To be filled by officer]</span></p>
+                <p>Officer assigned: <span class="fv">[To be filled by officer]</span></p>
+                <p>Reference: <span class="fv">[To be filled by officer]</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="mda-footer">
+            <div class="mda-footer-text">
+              <p>This is an automated confirmation email from the Government of Barbados.</p>
+              <p>Please <strong>do not reply</strong> to this email.</p>
+            </div>
+            <div class="mda-footer-right">
+              <img src="${_COAT}" alt="Coat of arms">
+              <p class="mda-footer-copyright">&copy; 2025 Government of Barbados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../index.html" class="inline-flex outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00">
+        Return to all forms
+      </a>
+    </div>`;
+  }
 };
 
 function validate(pageId) {

@@ -59,7 +59,7 @@
 <script>
 const FORM_NAME = 'Declaration of URL / Domain Name Ownership for Company Incorporation';
 
-const FLOW = ['start', 'declarant-details', 'domain-details', 'whois-record', 'dispute-consent', 'check', 'declaration', 'confirmation'];
+const FLOW = ['start', 'declarant-details', 'domain-details', 'whois-record', 'dispute-consent', 'check', 'declaration', 'confirmation', 'applicant-email', 'mda-email'];
 
 const PAGES = {
   'start': () => `
@@ -278,8 +278,141 @@ const PAGES = {
           <li>Keep your reference number in case you need to follow up.</li>
         </ul>
         <a href="#" onclick="GovBB.nav('start'); return false;" class="inline-flex outline-none underline-offset-2 underline hover:no-underline active:bg-bb-yellow-100 active:no-underline focus-visible:bg-bb-yellow-100 focus-visible:no-underline active:text-bb-black-00 focus-visible:text-bb-black-00 text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10 text-[1.25rem]">Return to start</a>
+        ${GovBB.continueBtn('See emails sent')}
       </div>
-    </div>`
+    </div>`,
+
+  'applicant-email': () => {
+    const D = GovBB.D;
+    const ref = window.__refNumber || 'URL-XXXXXX';
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2,'0');
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const yyyy = today.getFullYear();
+    const subDate = `${dd}/${mm}/${yyyy}`;
+    return `
+    <div class="space-y-6">
+      ${GovBB.backLink()}
+      <div class="eml-page-badge">&#9993; Applicant email &mdash; Declaration of URL / Domain Name Ownership</div>
+      <p class="eml-page-label">Email Templates / Applicant Emails</p>
+      <h1 class="eml-page-title">Declaration of URL / Domain Name Ownership &mdash; Applicant Confirmation</h1>
+      <p class="eml-page-desc">Sent to the applicant after they submit the Declaration of URL / Domain Name Ownership for Company Incorporation form.</p>
+      <div style="background:#f2f4f6;padding:32px 0;">
+        <div class="email-wrapper">
+          <div class="email-header-bar">${_LOGO}</div>
+          <div class="email-content">
+            <h1 class="email-h1">Application received</h1>
+            <p class="email-greeting">Dear ${D['declarant-name'] || '[Name]'},</p>
+            <p class="email-body">Thank you for submitting your Declaration of URL / Domain Name Ownership for Company Incorporation through the Government of Barbados online portal. We have received your application.</p>
+            <div class="ref-box">
+              <p class="ref-number">Reference Number: ${ref}</p>
+              <p class="ref-sub">Please keep this reference number for your records.</p>
+            </div>
+            <div class="next-section">
+              <p class="next-heading">What Happens Next?</p>
+              <ul class="next-list">
+                <li>Your URL / Domain Name Declaration has been received and logged.</li>
+                <li>A CAIPO officer will review your declaration.</li>
+                <li>Processing takes up to 5 working days.</li>
+                <li>You will be notified by email once your declaration has been filed.</li>
+                <li>Keep your reference number safe in case you need to follow up.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="email-footer-bar">
+            <div class="email-footer-text">
+              <p>This is an automated confirmation email from the Government of Barbados.</p>
+              <p>If you have any questions, please contact us and include your reference number: <strong>${ref}</strong></p>
+              <p>Please do not reply to this email.</p>
+            </div>
+            <div class="email-footer-right">
+              <img src="${_COAT}" alt="Coat of arms">
+              <p class="email-footer-copy">&copy; 2025 Government of Barbados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      ${GovBB.continueBtn('See MDA email')}
+    </div>`;
+  },
+
+  'mda-email': () => {
+    const D = GovBB.D;
+    const ref = window.__refNumber || 'URL-XXXXXX';
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2,'0');
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const yyyy = today.getFullYear();
+    const hh = String(today.getHours()).padStart(2,'0');
+    const min = String(today.getMinutes()).padStart(2,'0');
+    const subDate = `${dd}/${mm}/${yyyy}`;
+    const subTime = `${hh}:${min}`;
+    const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
+    return `
+    <div class="space-y-6">
+      ${GovBB.backLink()}
+      <div class="mda-page-badge">&#9993; MDA email template &mdash; Declaration of URL / Domain Name Ownership</div>
+      <p class="eml-page-label">Email Templates / MDA Emails</p>
+      <h1 class="eml-page-title">MDA Submission Email &mdash; Declaration of URL / Domain Name Ownership</h1>
+      <p class="eml-page-desc">Sent to CAIPO when a citizen submits the Declaration of URL / Domain Name Ownership for Company Incorporation form.</p>
+      <div style="background:#f2f4f6;padding:32px 0;">
+        <div class="mda-email">
+          <div class="mda-header">${_LOGO}</div>
+          <div class="mda-content">
+            <h1 class="mda-h1">You have received a Declaration of URL / Domain Name Ownership submission</h1>
+            <div class="mda-summary-table">
+              <div class="mda-summary-row"><div class="mda-summary-label">Service:</div><div class="mda-summary-value">Declaration of URL / Domain Name Ownership for Company Incorporation</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission ID:</div><div class="mda-summary-value">${ref}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission date:</div><div class="mda-summary-value">${subDate}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission time:</div><div class="mda-summary-value">${subTime}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Applicant email:</div><div class="mda-summary-value">${D['declarant-email'] || '&mdash;'}</div></div>
+            </div>
+            <p class="mda-intro">Here is the data from this request:</p>
+            <div class="mda-sections">
+              <p class="mda-section-h2">URL / Domain name details</p>
+              <div class="mda-data-table">
+                ${dr('Domain name', D['domain-url'])}
+                ${dr('Full website address', D['full-website-url'])}
+                ${dr('Registered owner of domain', D['registrant-status'])}
+                ${dr('Proposed company name', D['proposed-company-name'])}
+              </div>
+              <p class="mda-section-h2">Declarant details</p>
+              <div class="mda-data-table">
+                ${dr('Full name', D['declarant-name'])}
+                ${dr('Email address', D['declarant-email'])}
+                ${dr('Phone number', D['declarant-phone'])}
+                ${dr('Address', D['declarant-address'])}
+              </div>
+              <p class="mda-section-h2">WHOIS record</p>
+              <div class="mda-data-table">
+                ${dr('Domain name (WHOIS)', D['whois-domain'])}
+                ${dr('Registrant name', D['registrant-name'])}
+                ${dr('Registrant email', D['registrant-email'])}
+              </div>
+              <div class="mda-internal-box">
+                <p>Due date: <span class="fv">[To be filled by officer]</span></p>
+                <p>Officer assigned: <span class="fv">[To be filled by officer]</span></p>
+                <p>Reference: <span class="fv">[To be filled by officer]</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="mda-footer">
+            <div class="mda-footer-text">
+              <p>This is an automated confirmation email from the Government of Barbados.</p>
+              <p>Please <strong>do not reply</strong> to this email.</p>
+            </div>
+            <div class="mda-footer-right">
+              <img src="${_COAT}" alt="Coat of arms">
+              <p class="mda-footer-copyright">&copy; 2025 Government of Barbados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../index.html" class="inline-flex outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00">
+        Return to all forms
+      </a>
+    </div>`;
+  }
 };
 
 function validate(pageId) {
