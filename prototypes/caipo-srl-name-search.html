@@ -10,6 +10,62 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../assets/govbb-tailwind-config.js"></script>
   <link rel="stylesheet" href="../assets/govbb-base.css">
+  <style>
+    /* Applicant email preview styles */
+    .email-wrapper { background:#fff; overflow:hidden; max-width:900px; margin:0 auto; }
+    .email-header-bar { background:#ffc726; padding:32px 40px; display:flex; align-items:center; }
+    .email-header-bar svg { display:block; }
+    .email-content { background:#fff; padding:32px 40px; display:flex; flex-direction:column; gap:16px; }
+    .email-h1 { font-size:40px; font-weight:700; line-height:1.2; color:#000; margin:0; }
+    .email-greeting { font-size:20px; color:#000; margin:0; }
+    .email-body { font-size:20px; color:#000; line-height:1.5; margin:0; }
+    .ref-box { background:#ace6e9; padding:24px 16px; display:flex; flex-direction:column; gap:16px; }
+    .ref-number { font-size:32px; font-weight:700; line-height:1.25; color:#00267f; margin:0; word-break:break-word; }
+    .ref-sub { font-size:20px; color:#000; margin:0; line-height:1.5; }
+    .next-section { padding:24px 16px; display:flex; flex-direction:column; gap:8px; }
+    .next-heading { font-size:32px; font-weight:700; line-height:1.25; color:#000; margin:0; }
+    .next-list { list-style:disc; padding-left:30px; display:flex; flex-direction:column; gap:8px; margin:0; }
+    .next-list li { font-size:20px; color:#000; line-height:1.5; }
+    .email-footer-bar { background:#00267f; color:#fff; padding:32px; display:flex; align-items:stretch; justify-content:space-between; gap:32px; }
+    .email-footer-text { flex:1; font-size:20px; line-height:1.5; display:flex; flex-direction:column; gap:16px; }
+    .email-footer-text p { margin:0; }
+    .email-footer-right { display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-end; gap:12px; flex-shrink:0; }
+    .email-footer-right img { width:80px; height:auto; }
+    .email-footer-copy { font-size:20px; color:#fff; white-space:nowrap; margin:0; }
+    /* MDA email preview styles */
+    .mda-email { background:#fff; }
+    .mda-header { background:#ffc726; padding:24px 32px; }
+    .mda-content { background:#fff; padding:64px 32px 32px; display:flex; flex-direction:column; gap:32px; }
+    .mda-h1 { font-size:40px; font-weight:700; line-height:1.15; color:#000; margin:0; }
+    .mda-summary-table { background:#e5e9f2; }
+    .mda-summary-row { display:flex; align-items:stretch; border-bottom:1px solid #fff; }
+    .mda-summary-row:last-child { border-bottom:1px solid #e5e9f2; }
+    .mda-summary-label { width:304px; flex-shrink:0; padding:8px; font-weight:700; font-size:20px; }
+    .mda-summary-value { flex:1; padding:8px 8px 8px 16px; font-size:20px; }
+    .mda-intro { font-size:20px; color:#000; margin:0; }
+    .mda-sections { display:flex; flex-direction:column; gap:35px; }
+    .mda-section-h2 { font-size:40px; font-weight:700; line-height:1.25; color:#000; margin-bottom:8px; }
+    .mda-declaration-text { font-size:20px; color:#000; padding:8px 0 12px; margin:0; }
+    .mda-data-table { width:100%; }
+    .mda-data-row { display:flex; align-items:stretch; border-bottom:1px solid #e0e4e9; }
+    .mda-data-label { width:304px; flex-shrink:0; padding:8px; font-weight:700; font-size:20px; }
+    .mda-data-value { flex:1; padding:8px 8px 8px 16px; font-size:20px; color:#595959; font-style:italic; }
+    .mda-internal-box { background:#e5e9f2; padding:16px; display:flex; flex-direction:column; gap:8px; }
+    .mda-internal-box p { font-size:20px; font-weight:700; color:#000; margin:0; }
+    .mda-internal-box .fv { font-weight:400; color:#595959; font-style:italic; }
+    .mda-footer { background:#00267f; color:#fff; padding:32px; display:flex; align-items:flex-start; justify-content:space-between; gap:32px; }
+    .mda-footer-text { flex:1; font-size:20px; line-height:1.5; display:flex; flex-direction:column; gap:16px; }
+    .mda-footer-text p { margin:0; }
+    .mda-footer-right { display:flex; flex-direction:column; align-items:flex-end; gap:12px; flex-shrink:0; }
+    .mda-footer-right img { width:80px; height:auto; }
+    .mda-footer-copyright { font-size:20px; color:#fff; white-space:nowrap; margin:0; }
+    /* Email page chrome */
+    .eml-page-badge { display:inline-flex; align-items:center; gap:6px; background:#fff9e9; border:1.5px solid #ffc726; border-radius:4px; padding:6px 14px; font-size:14px; font-weight:600; color:#000; }
+    .mda-page-badge { display:inline-flex; align-items:center; gap:6px; background:#e5e9f2; border:1.5px solid #99a8cc; border-radius:4px; padding:6px 14px; font-size:14px; font-weight:600; color:#000; }
+    .eml-page-label { font-size:14px; font-weight:600; color:#595959; text-transform:uppercase; letter-spacing:0.05em; margin:0; }
+    .eml-page-title { font-size:28px; font-weight:700; color:#000; margin-bottom:8px; }
+    .eml-page-desc { font-size:16px; color:#595959; margin-bottom:24px; }
+  </style>
 </head>
 <body>
 <!-- Top bar -->
