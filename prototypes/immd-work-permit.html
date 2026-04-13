@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment – Immigration Department — Ministry of Home Affairs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../assets/govbb-tailwind-config.js"></script>
+  <link rel="stylesheet" href="../assets/govbb-base.css">
+  <style>
+    .email-wrapper { background:#fff; overflow:hidden; max-width:900px; margin:0 auto; }
+    .email-header-bar { background:#ffc726; padding:32px 40px; display:flex; align-items:center; }
+    .email-content { background:#fff; padding:32px 40px; display:flex; flex-direction:column; gap:16px; }
+    .email-h1 { font-size:40px; font-weight:700; line-height:1.2; color:#000; margin:0; }
+    .email-greeting { font-size:20px; color:#000; margin:0; }
+    .email-body { font-size:20px; color:#000; line-height:1.5; margin:0; }
+    .ref-box { background:#ace6e9; padding:24px 16px; display:flex; flex-direction:column; gap:16px; }
+    .ref-number { font-size:32px; font-weight:700; line-height:1.25; color:#00267f; margin:0; word-break:break-word; }
+    .ref-sub { font-size:20px; color:#000; margin:0; line-height:1.5; }
+    .next-section { padding:24px 16px; display:flex; flex-direction:column; gap:8px; }
+    .next-heading { font-size:32px; font-weight:700; line-height:1.25; color:#000; margin:0; }
+    .next-list { list-style:disc; padding-left:30px; display:flex; flex-direction:column; gap:8px; margin:0; }
+    .next-list li { font-size:20px; color:#000; line-height:1.5; }
+    .email-footer-bar { background:#00267f; color:#fff; padding:32px; display:flex; align-items:stretch; justify-content:space-between; gap:32px; }
+    .email-footer-text { flex:1; font-size:20px; line-height:1.5; display:flex; flex-direction:column; gap:16px; }
+    .email-footer-text p { margin:0; }
+    .email-footer-right { display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-end; gap:12px; flex-shrink:0; }
+    .email-footer-right img { width:80px; height:auto; }
+    .email-footer-copy { font-size:20px; color:#fff; white-space:nowrap; margin:0; }
+    .mda-email { background:#fff; }
+    .mda-header { background:#ffc726; padding:24px 32px; }
+    .mda-content { background:#fff; padding:64px 32px 32px; display:flex; flex-direction:column; gap:32px; }
+    .mda-h1 { font-size:40px; font-weight:700; line-height:1.15; color:#000; margin:0; }
+    .mda-summary-table { background:#e5e9f2; }
+    .mda-summary-row { display:flex; align-items:stretch; border-bottom:1px solid #fff; }
+    .mda-summary-row:last-child { border-bottom:1px solid #e5e9f2; }
+    .mda-summary-label { width:304px; flex-shrink:0; padding:8px; font-weight:700; font-size:20px; }
+    .mda-summary-value { flex:1; padding:8px 8px 8px 16px; font-size:20px; }
+    .mda-intro { font-size:20px; color:#000; margin:0; }
+    .mda-sections { display:flex; flex-direction:column; gap:35px; }
+    .mda-section-h2 { font-size:40px; font-weight:700; line-height:1.25; color:#000; margin-bottom:8px; }
+    .mda-data-table { width:100%; }
+    .mda-data-row { display:flex; align-items:stretch; border-bottom:1px solid #e0e4e9; }
+    .mda-data-label { width:304px; flex-shrink:0; padding:8px; font-weight:700; font-size:20px; }
+    .mda-data-value { flex:1; padding:8px 8px 8px 16px; font-size:20px; color:#595959; font-style:italic; }
+    .mda-internal-box { background:#e5e9f2; padding:16px; display:flex; flex-direction:column; gap:8px; }
+    .mda-internal-box p { font-size:20px; font-weight:700; color:#000; margin:0; }
+    .mda-internal-box .fv { font-weight:400; color:#595959; font-style:italic; }
+    .mda-footer { background:#00267f; color:#fff; padding:32px; display:flex; align-items:flex-start; justify-content:space-between; gap:32px; }
+    .mda-footer-text { flex:1; font-size:20px; line-height:1.5; display:flex; flex-direction:column; gap:16px; }
+    .mda-footer-text p { margin:0; }
+    .mda-footer-right { display:flex; flex-direction:column; align-items:flex-end; gap:12px; flex-shrink:0; }
+    .mda-footer-right img { width:80px; height:auto; }
+    .mda-footer-copyright { font-size:20px; color:#fff; white-space:nowrap; margin:0; }
+    .eml-page-badge { display:inline-flex; align-items:center; gap:6px; background:#fff9e9; border:1.5px solid #ffc726; border-radius:4px; padding:6px 14px; font-size:14px; font-weight:600; color:#000; }
+    .mda-page-badge { display:inline-flex; align-items:center; gap:6px; background:#e5e9f2; border:1.5px solid #99a8cc; border-radius:4px; padding:6px 14px; font-size:14px; font-weight:600; color:#000; }
+    .eml-page-label { font-size:14px; font-weight:600; color:#595959; text-transform:uppercase; letter-spacing:0.05em; margin:0; }
+    .eml-page-title { font-size:28px; font-weight:700; color:#000; margin-bottom:8px; }
+    .eml-page-desc { font-size:16px; color:#595959; margin-bottom:24px; }
+    </style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="bg-bb-blue-100 text-bb-white-00">
+  <div class="flex items-center gap-2 px-xl py-2 text-[0.875rem]">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Coat_of_arms_of_Barbados_%282%29.svg/1280px-Coat_of_arms_of_Barbados_%282%29.svg.png" alt="Coat of arms of Barbados" style="height:20px;width:auto;">
+    Official website of the Government of Barbados
+  </div>
+</div>
+
+<!-- Header -->
+<header class="bg-bb-yellow-100">
+  <div class="px-xl py-m">
+    <div class="text-bb-black-00" style="width:355px;height:35px;">
+      <svg width="100%" viewBox="0 0 276 27" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img"><path d="M39.079 21.527C37.5026 21.527 36.103 21.1903 34.8802 20.5168C33.6721 19.8286 32.7219 18.8916 32.0294 17.7057C31.337 16.5051 30.9908 15.1288 30.9908 13.5769C30.9908 12.0249 31.337 10.6559 32.0294 9.47001C32.7219 8.26943 33.6721 7.3324 34.8802 6.65891C36.103 5.97077 37.5026 5.6267 39.079 5.6267C40.0219 5.6267 40.8911 5.7658 41.6867 6.04398C42.4823 6.32216 43.1821 6.71015 43.7861 7.20795C44.4049 7.69111 44.9205 8.24747 45.3331 8.87704L42.858 10.4144C42.6075 10.0191 42.276 9.66767 41.8635 9.3602C41.4657 9.05274 41.0237 8.81116 40.5376 8.63547C40.0514 8.45977 39.5652 8.37192 39.079 8.37192C38.1067 8.37192 37.2448 8.59886 36.4934 9.05274C35.7421 9.49197 35.1527 10.0996 34.7255 10.8756C34.2982 11.6515 34.0846 12.552 34.0846 13.5769C34.0846 14.5871 34.2909 15.4875 34.7034 16.2782C35.1307 17.0688 35.7273 17.691 36.4934 18.1449C37.2595 18.5841 38.1435 18.8038 39.1453 18.8038C39.8967 18.8038 40.567 18.6647 41.1563 18.3865C41.7456 18.0937 42.2171 17.691 42.5707 17.1786C42.9243 16.6661 43.1231 16.0659 43.1673 15.3777H39.5873V13.0278H46.0844V14.8946C46.055 16.3001 45.7382 17.5007 45.1342 18.4963C44.5301 19.4773 43.7051 20.2313 42.6591 20.7584C41.613 21.2708 40.4197 21.527 39.079 21.527Z"></path><path d="M12.5786 0C11.6253 2.46943 10.6536 5.03986 8.57466 7.00774C9.21998 6.80573 10.3493 6.62461 11.0753 6.64203V17.0283L7.988 17.4636C7.878 17.4532 7.84133 17.2895 7.84133 17.0666C7.54434 13.8413 6.74135 11.1316 5.81736 8.32779C5.75136 7.94466 4.58171 6.48181 5.4837 6.73955C5.5937 6.75348 6.80002 7.2202 6.60935 6.99729C4.96671 5.38119 2.56508 4.21788 0.233112 3.87306C0.0277812 3.8243 -0.0932171 3.92183 0.0901136 4.14822C3.18474 8.6726 5.77336 14.012 5.75136 20.3475C6.95401 20.3475 9.86897 19.6718 11.0753 19.6718V27H12.5969L12.9453 6.53406L12.5786 0Z"></path><path d="M12.5786 0C13.5319 2.46943 14.5036 5.03986 16.5825 7.00774C15.9372 6.80573 14.8079 6.62461 14.0819 6.64203V17.0283L17.1692 17.4636C17.2792 17.4532 17.3159 17.2895 17.3159 17.0666C17.6129 13.8413 18.4158 11.1316 19.3398 8.32779C19.4058 7.94466 20.5755 6.48181 19.6735 6.73955C19.5635 6.75348 18.3572 7.2202 18.5478 6.99729C20.1905 5.38119 22.5921 4.21788 24.9241 3.87306C25.1294 3.8243 25.2504 3.92183 25.0671 4.14822C21.9725 8.6726 19.3838 14.012 19.4058 20.3475C18.2032 20.3475 15.2882 19.6718 14.0819 19.6718V27H12.5603L12.2119 6.53406L12.5786 0Z"></path></g></svg></svg>
+    </div>
+  </div>
+</header>
+
+<!-- Alpha banner -->
+<div class="bg-bb-blue-10">
+  <div class="container py-xs text-[1rem]">
+    This page is in <a href="#" class="inline-flex outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10">Alpha</a>. Your feedback helps us improve.
+  </div>
+</div>
+
+<!-- Main -->
+<main>
+  <div class="container py-l max-w-3xl" id="app"></div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-bb-blue-100 text-bb-white-00">
+  <div class="container py-l text-[1rem]">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <p>&copy; 2025 Government of Barbados. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" class="underline underline-offset-2 hover:no-underline text-bb-white-00">Privacy</a>
+        <a href="#" class="underline underline-offset-2 hover:no-underline text-bb-white-00">Terms</a>
+        <a href="#" class="underline underline-offset-2 hover:no-underline text-bb-white-00">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/govbb-framework.js"></script>
+<script>
+const FORM_NAME = 'Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment';
+const _COAT = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Coat_of_arms_of_Barbados_%282%29.svg/1280px-Coat_of_arms_of_Barbados_%282%29.svg.png';
+const _LOGO = `<svg width="100%" viewBox="0 0 276 27" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img"><g><path d="M39.079 21.527C37.5026 21.527 36.103 21.1903 34.8802 20.5168C33.6721 19.8286 32.7219 18.8916 32.0294 17.7057C31.337 16.5051 30.9908 15.1288 30.9908 13.5769C30.9908 12.0249 31.337 10.6559 32.0294 9.47001C32.7219 8.26943 33.6721 7.3324 34.8802 6.65891C36.103 5.97077 37.5026 5.6267 39.079 5.6267C40.0219 5.6267 40.8911 5.7658 41.6867 6.04398C42.4823 6.32216 43.1821 6.71015 43.7861 7.20795C44.4049 7.69111 44.9205 8.24747 45.3331 8.87704L42.858 10.4144C42.6075 10.0191 42.276 9.66767 41.8635 9.3602C41.4657 9.05274 41.0237 8.81116 40.5376 8.63547C40.0514 8.45977 39.5652 8.37192 39.079 8.37192C38.1067 8.37192 37.2448 8.59886 36.4934 9.05274C35.7421 9.49197 35.1527 10.0996 34.7255 10.8756C34.2982 11.6515 34.0846 12.552 34.0846 13.5769C34.0846 14.5871 34.2909 15.4875 34.7034 16.2782C35.1307 17.0688 35.7273 17.691 36.4934 18.1449C37.2595 18.5841 38.1435 18.8038 39.1453 18.8038C39.8967 18.8038 40.567 18.6647 41.1563 18.3865C41.7456 18.0937 42.2171 17.691 42.5707 17.1786C42.9243 16.6661 43.1231 16.0659 43.1673 15.3777H39.5873V13.0278H46.0844V14.8946C46.055 16.3001 45.7382 17.5007 45.1342 18.4963C44.5301 19.4773 43.7051 20.2313 42.6591 20.7584C41.613 21.2708 40.4197 21.527 39.079 21.527Z"></path><path d="M12.5786 0C11.6253 2.46943 10.6536 5.03986 8.57466 7.00774C9.21998 6.80573 10.3493 6.62461 11.0753 6.64203V17.0283L7.988 17.4636C7.878 17.4532 7.84133 17.2895 7.84133 17.0666C7.54434 13.8413 6.74135 11.1316 5.81736 8.32779C5.75136 7.94466 4.58171 6.48181 5.4837 6.73955C5.5937 6.75348 6.80002 7.2202 6.60935 6.99729C4.96671 5.38119 2.56508 4.21788 0.233112 3.87306C0.0277812 3.8243 -0.0932171 3.92183 0.0901136 4.14822C3.18474 8.6726 5.77336 14.012 5.75136 20.3475C6.95401 20.3475 9.86897 19.6718 11.0753 19.6718V27H12.5969L12.9453 6.53406L12.5786 0Z"></path><path d="M12.5786 0C13.5319 2.46943 14.5036 5.03986 16.5825 7.00774C15.9372 6.80573 14.8079 6.62461 14.0819 6.64203V17.0283L17.1692 17.4636C17.2792 17.4532 17.3159 17.2895 17.3159 17.0666C17.6129 13.8413 18.4158 11.1316 19.3398 8.32779C19.4058 7.94466 20.5755 6.48181 19.6735 6.73955C19.5635 6.75348 18.3572 7.2202 18.5478 6.99729C20.1905 5.38119 22.5921 4.21788 24.9241 3.87306C25.1294 3.8243 25.2504 3.92183 25.0671 4.14822C21.9725 8.6726 19.3838 14.012 19.4058 20.3475C18.2032 20.3475 15.2882 19.6718 14.0819 19.6718V27H12.5603L12.2119 6.53406L12.5786 0Z"></path></g></svg>`;
+
+const FLOW = ['start', 'application-type', 'non-immigrant-details', 'employer-details', 'workforce-context', 'job-details', 'minimum-requirements', 'supervision', 'declaration', 'check', 'declaration', 'confirmation', 'applicant-email', 'mda-email'];
+
+const PAGES = {
+  'application-type': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">What type of application is this?</h1>
+      <div class="space-y-8">
+        ${GovBB.radioGroup('application-type', 'Select the type of application', ['New Work Permit', 'Extension of Existing Work Permit', 'Job Offer Only'])}
+        <div id="permit-number-field" style="display:none">
+          ${GovBB.textField('existing-permit-number', 'Existing work permit number', {hint: 'Required for extensions'})}
+        </div>
+        <script>
+          document.addEventListener('change', function(e) {
+            if (e.target.name === 'application-type') {
+              document.getElementById('permit-number-field').style.display =
+                e.target.value === 'Extension of Existing Work Permit' ? 'block' : 'none';
+            }
+          });
+        </script>
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'non-immigrant-details': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Non-immigrant's details</h1>
+      <div class="space-y-8">
+        ${GovBB.textField('ni-family-name', 'Family (last) name')}
+        ${GovBB.textField('ni-first-name', 'First name')}
+        ${GovBB.textField('ni-middle-name', 'Middle name', {hint: 'Leave blank if none'})}
+        ${GovBB.textField('ni-maiden-name', 'Maiden name', {hint: 'Leave blank if not applicable'})}
+        ${GovBB.textareaField('ni-present-address', 'Present address', {rows: 3})}
+        ${GovBB.textField('ni-visa-type', 'Current visa or permit type', {hint: 'For example, Visitor visa, Student permit'})}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'employer-details': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Employer and organisation details</h1>
+      <div class="space-y-8">
+        ${GovBB.textField('employer-name', 'Name of employer or organisation')}
+        ${GovBB.telField('employer-telephone', 'Employer telephone number')}
+        ${GovBB.textareaField('employer-mailing-address', 'Employer mailing address', {rows: 3})}
+        ${GovBB.textareaField('employer-work-address', 'Address where non-immigrant will work', {hint: 'Leave blank if same as mailing address', rows: 3})}
+        ${GovBB.textareaField('business-description', 'Description of the organisation's business', {rows: 3})}
+        ${GovBB.textField('org-total-employees', 'Total number of employees in organisation', {inputmode: 'numeric'})}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'workforce-context': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Workforce and recruitment</h1>
+      <div class="space-y-8">
+        ${GovBB.textField('employees-same-work', 'Number of employees doing the same work', {inputmode: 'numeric'})}
+        ${GovBB.radioGroup('would-hire-barbadian', 'Would you hire a qualified Barbadian citizen or resident for this job if one were available?', ['Yes', 'No'])}
+        ${GovBB.textareaField('efforts-to-fill', 'What efforts have you made to find a qualified local person?', {rows: 4})}
+        ${GovBB.textareaField('how-non-immigrant-found', 'How did you find this non-immigrant?', {hint: 'If by advertisement, attach newspaper copies', rows: 3})}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'job-details': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Job details</h1>
+      <div class="space-y-8">
+        ${GovBB.textField('job-title', 'Name of job offered')}
+        ${GovBB.textField('hours-per-week', 'Basic hours per week', {inputmode: 'numeric', width: '8rem'})}
+        ${GovBB.textField('pay-basic-rate', 'Basic rate of pay (BBD)', {inputmode: 'decimal', width: '12rem'})}
+        ${GovBB.selectField('pay-basic-period', 'Basic pay period', ['Per hour', 'Per day', 'Per week', 'Per fortnight', 'Per month'])}
+        ${GovBB.textareaField('job-duties', 'Description of job duties', {hint: 'Be specific', rows: 5})}
+        ${GovBB.radioGroup('labour-dispute', 'Is there a labour dispute or contract negotiation in progress at the worksite?', ['Yes', 'No'])}
+        ${GovBB.radioGroup('unionised', 'Is the workforce at this worksite unionised?', ['Yes', 'No'])}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'minimum-requirements': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Minimum requirements for the job</h1>
+      <div class="space-y-8">
+        ${GovBB.textareaField('edu-requirements', 'Education requirements', {hint: 'For example, secondary school, university degree in accounting', rows: 3})}
+        ${GovBB.textField('experience-years', 'Years of experience required in this job', {inputmode: 'numeric', width: '8rem'})}
+        ${GovBB.textareaField('other-requirements', 'Any other special requirements', {hint: 'Leave blank if none', rows: 3})}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'supervision': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Supervision</h1>
+      <div class="space-y-8">
+        ${GovBB.textField('supervisor-title', 'Occupational title of the non-immigrant's supervisor')}
+        ${GovBB.textareaField('supervision-type', 'Type and degree of supervision the non-immigrant will receive', {hint: 'For example, daily direct supervision, general direction only', rows: 3})}
+        ${GovBB.textField('employees-supervised', 'Number of employees the non-immigrant will supervise', {hint: 'Enter 0 if none', inputmode: 'numeric', width: '8rem'})}
+        ${GovBB.radioGroup('ni-fully-informed', 'Have you fully informed the non-immigrant of all duties, conditions of employment, and terms of pay?', ['Yes', 'No'])}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'declaration': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Declaration</h1>
+      <div class="space-y-8">
+        <div class="p-s border-l-4 border-bb-blue-40 bg-bb-blue-10 mb-4">
+          <p>I declare that the information given in this application is true and correct to the best of my knowledge and belief.</p>
+        </div>
+        ${GovBB.textField('employer-signatory-name', 'Full name of employer signatory')}
+        ${GovBB.textField('employer-signatory-title', 'Title of employer signatory', {hint: 'For example, Director, Managing Director, Owner'})}
+        ${GovBB.emailField('contact-email', 'Email address')}
+        ${GovBB.dateField('employer-date', 'Date of declaration', 'For example, 13 04 2026')}
+        ${GovBB.radioGroup('agent-completing', 'Is this form being submitted by an agent on behalf of the employer?', ['Yes', 'No'])}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+
+
+  'check': () => {
+    const D = GovBB.D;
+    return `
+    <div class="space-y-8">
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check your answers before sending</h1>
+      <div class="space-y-8">
+        <dl class="divide-y divide-bb-grey-00 border-t border-bb-grey-00">
+          {GovBB.checkRows ? GovBB.checkRows() : ""}
+        </dl>
+        ${GovBB.continueBtn('Continue to declaration')}
+      </div>
+    </div>`;
+  },
+
+  'declaration': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Declaration</h1>
+      <div class="space-y-8">
+        <p class="text-[1.25rem] leading-relaxed">By submitting this form, I confirm that the information I have provided is true and correct to the best of my knowledge. I understand that providing false or misleading information may result in my application being rejected or legal action being taken.</p>
+        <div class="flex gap-5 items-start">
+          <button type="button" role="checkbox" aria-checked="false" id="chk-declaration"
+            onclick="GovBB.toggleCheckbox('declaration-agree')"
+            class="relative inline-flex size-12 shrink-0 items-center justify-center bg-bb-white-00 border-2 border-bb-black-00 rounded-sm transition-all outline-none hover:cursor-pointer hover:shadow-form-hover focus-visible:ring-4 focus-visible:ring-bb-teal-100 mt-1">
+          </button>
+          <label class="text-[1.25rem] leading-normal text-bb-black-00 cursor-pointer">I confirm that the information I have provided is true and correct.</label>
+        </div>
+        ${GovBB.continueBtn('Submit application')}
+      </div>
+    </form>`,
+
+  'confirmation': () => `
+    <div class="space-y-8">
+      <div class="bg-bb-teal-00 text-bb-white-00 p-8 rounded-sm space-y-4">
+        <h1 class="font-bold text-[3.5rem] leading-[1.15]">Application submitted</h1>
+        <p class="text-[1.5rem]">Your reference number</p>
+        <p class="text-[2rem] font-bold">${window.__refNumber || ''WPE-' + Math.random().toString(36).substring(2,8).toUpperCase()'}</p>
+      </div>
+            <div class="space-y-4">
+        <h2 class="font-bold text-[2rem]">What happens next</h2>
+        <p class="text-[1.25rem]">('Application type', "D['application-type']", 'application-type')</p>
+        <p class="text-[1.25rem]">('Employer', "D['employer-name']", 'employer-details')</p>
+        <p class="text-[1.25rem]">('Non-immigrant name', "D['ni-first-name'] + ' ' + D['ni-family-name']", 'non-immigrant-details')</p>
+        <p class="text-[1.25rem]">('Current visa type', "D['ni-visa-type']", 'non-immigrant-details')</p>
+        <p class="text-[1.25rem]">('Job title', "D['job-title']", 'job-details')</p>
+        <p class="text-[1.25rem]">('Signatory', "D['employer-signatory-name']", 'declaration')</p>
+
+      </div>
+      ${GovBB.continueBtn('See emails sent')}
+    </div>`,
+
+  'applicant-email': () => {
+    const D = GovBB.D;
+    const ref = window.__refNumber || 'WPE-XXXXXX';
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2,'0');
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const yyyy = today.getFullYear();
+    const subDate = `${dd}/${mm}/${yyyy}`;
+    return `
+    <div class="space-y-6">
+      ${GovBB.backLink()}
+      <div class="eml-page-badge">&#9993; Applicant email &mdash; Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment</div>
+      <p class="eml-page-label">Email Templates / Applicant Emails</p>
+      <h1 class="eml-page-title">Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment &mdash; Applicant Confirmation</h1>
+      <p class="eml-page-desc">Sent to the applicant after they submit the Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment form.</p>
+      <div style="background:#f2f4f6;padding:32px 0;">
+        <div class="email-wrapper">
+          <div class="email-header-bar">${_LOGO}</div>
+          <div class="email-content">
+            <h1 class="email-h1">Application received</h1>
+            <p class="email-greeting">Dear ${D['ni-first-name'] || '[Name]'},</p>
+            <p class="email-body">Thank you for submitting your Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment. We have received your application and will review it shortly.</p>
+            <div class="ref-box">
+              <p class="ref-number">Reference Number: ${ref}</p>
+              <p class="ref-sub">Please keep this reference number for your records.</p>
+            </div>
+            <div class="next-section">
+              <p class="next-heading">What happens next</p>
+              <ul class="next-list">
+                <li>We will review your application and contact you within 10 working days.</li>
+                <li>You may be asked to provide additional documents.</li>
+                <li>An official receipt of the application fee must be submitted.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="email-footer-bar">
+            <div class="email-footer-text">
+              <p>This is an automated confirmation email from the Government of Barbados.</p>
+              <p>If you have any questions, please contact the Immigration Department and include your reference number: <strong>${ref}</strong></p>
+              <p>Please do not reply to this email.</p>
+            </div>
+            <div class="email-footer-right">
+              <img src="${_COAT}" alt="Coat of arms">
+              <p class="email-footer-copy">&copy; 2025 Government of Barbados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      ${GovBB.continueBtn('See MDA email')}
+    </div>`;
+  },
+
+  'mda-email': () => {
+    const D = GovBB.D;
+    const ref = window.__refNumber || 'WPE-XXXXXX';
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2,'0');
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const yyyy = today.getFullYear();
+    const hh = String(today.getHours()).padStart(2,'0');
+    const min = String(today.getMinutes()).padStart(2,'0');
+    const subDate = `${dd}/${mm}/${yyyy}`;
+    const subTime = `${hh}:${min}`;
+    const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
+    return `
+    <div class="space-y-6">
+      ${GovBB.backLink()}
+      <div class="mda-page-badge">&#9993; MDA email &mdash; Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment</div>
+      <p class="eml-page-label">Email Templates / MDA Emails</p>
+      <h1 class="eml-page-title">MDA Submission Email &mdash; Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment</h1>
+      <p class="eml-page-desc">Sent to the Immigration Department when a citizen submits the Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment form.</p>
+      <div style="background:#f2f4f6;padding:32px 0;">
+        <div class="mda-email">
+          <div class="mda-header">${_LOGO}</div>
+          <div class="mda-content">
+            <h1 class="mda-h1">You have received a Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment submission</h1>
+            <div class="mda-summary-table">
+              <div class="mda-summary-row"><div class="mda-summary-label">Service:</div><div class="mda-summary-value">Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission ID:</div><div class="mda-summary-value">${ref}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission date:</div><div class="mda-summary-value">${subDate}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission time:</div><div class="mda-summary-value">${subTime}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Applicant email:</div><div class="mda-summary-value">${D['contact-email'] || '&mdash;'}</div></div>
+            </div>
+            <p class="mda-intro">Here is the data from this submission:</p>
+            <div class="mda-sections">
+[
+    {heading: 'Application type', rows: [
+      ['Application type', D['application-type']||''],
+      ['Existing permit number', D['existing-permit-number']||'N/A'],
+    ]},
+    {heading: 'Non-immigrant details', rows: [
+      ['Full name', (D['ni-first-name']||'') + ' ' + (D['ni-family-name']||'')],
+      ['Present address', D['ni-present-address']||''],
+      ['Current visa or permit type', D['ni-visa-type']||''],
+    ]},
+    {heading: 'Employer details', rows: [
+      ['Employer name', D['employer-name']||''],
+      ['Telephone', D['employer-telephone']||''],
+      ['Mailing address', D['employer-mailing-address']||''],
+    ]},
+    {heading: 'Job details', rows: [
+      ['Job title', D['job-title']||''],
+      ['Hours per week', D['hours-per-week']||''],
+      ['Basic pay (BBD)', D['pay-basic-rate']||''],
+      ['Pay period', D['pay-basic-period']||''],
+    ]},
+    {heading: 'Declaration', rows: [
+      ['Signatory', D['employer-signatory-name']||''],
+      ['Title', D['employer-signatory-title']||''],
+      ['Email', D['contact-email']||''],
+    ]},
+  ]
+              <div class="mda-internal-box">
+                <p>Due date: <span class="fv">[To be filled by officer]</span></p>
+                <p>Officer assigned: <span class="fv">[To be filled by officer]</span></p>
+                <p>Reference: <span class="fv">[To be filled by officer]</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="mda-footer">
+            <div class="mda-footer-text">
+              <p>This is an automated notification from the Government of Barbados.</p>
+              <p>Please <strong>do not reply</strong> to this email.</p>
+            </div>
+            <div class="mda-footer-right">
+              <img src="${_COAT}" alt="Coat of arms">
+              <p class="mda-footer-copyright">&copy; 2025 Government of Barbados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../index.html" class="inline-flex outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00">Return to all forms</a>
+    </div>`;
+  }
+};
+
+function validate(pageId) {
+  const D = GovBB.D;
+  const errors = [];
+  if (pageId === 'application-type') {
+    if (!D['application-type']) errors.push({id:'application-type', msg:'Application type – Select the type of application'});
+  }
+  if (pageId === 'non-immigrant-details') {
+    if (!D['ni-family-name']) errors.push({id:'ni-family-name', msg:'Family name – Enter the non-immigrant's family name'});
+    if (!D['ni-first-name']) errors.push({id:'ni-first-name', msg:'First name – Enter the non-immigrant's first name'});
+    if (!D['ni-present-address']) errors.push({id:'ni-present-address', msg:'Present address – Enter the present address'});
+  }
+  if (pageId === 'employer-details') {
+    if (!D['employer-name']) errors.push({id:'employer-name', msg:'Employer name – Enter the employer or organisation name'});
+    if (!D['employer-telephone']) errors.push({id:'employer-telephone', msg:'Telephone – Enter the employer telephone number'});
+    if (!D['employer-mailing-address']) errors.push({id:'employer-mailing-address', msg:'Mailing address – Enter the employer mailing address'});
+  }
+  if (pageId === 'job-details') {
+    if (!D['job-title']) errors.push({id:'job-title', msg:'Job title – Enter the name of the job offered'});
+    if (!D['job-duties']) errors.push({id:'job-duties', msg:'Job duties – Describe the job duties'});
+  }
+  if (pageId === 'declaration') {
+    if (!D['employer-signatory-name']) errors.push({id:'employer-signatory-name', msg:'Signatory name – Enter the full name of the employer signatory'});
+    if (!D['contact-email']) errors.push({id:'contact-email', msg:'Email – Enter the email address'});
+  }
+  return errors;
+}
+
+GovBB.init({
+  formName: FORM_NAME,
+  flow: FLOW,
+  pages: PAGES,
+  validate: validate,
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate by Non-Immigrant Student (Form H-2) – Immigration Department</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../assets/govbb-tailwind-config.js"></script>
+  <link rel="stylesheet" href="../assets/govbb-base.css">
+  <style>
+    .email-wrapper { background:#fff; overflow:hidden; max-width:900px; margin:0 auto; }
+    .email-header-bar { background:#ffc726; padding:32px 40px; display:flex; align-items:center; }
+    .email-content { background:#fff; padding:32px 40px; display:flex; flex-direction:column; gap:16px; }
+    .email-h1 { font-size:40px; font-weight:700; line-height:1.2; color:#000; margin:0; }
+    .email-greeting { font-size:20px; color:#000; margin:0; }
+    .email-body { font-size:20px; color:#000; line-height:1.5; margin:0; }
+    .ref-box { background:#ace6e9; padding:24px 16px; display:flex; flex-direction:column; gap:16px; }
+    .ref-number { font-size:32px; font-weight:700; line-height:1.25; color:#00267f; margin:0; word-break:break-word; }
+    .ref-sub { font-size:20px; color:#000; margin:0; line-height:1.5; }
+    .next-section { padding:24px 16px; display:flex; flex-direction:column; gap:8px; }
+    .next-heading { font-size:32px; font-weight:700; line-height:1.25; color:#000; margin:0; }
+    .next-list { list-style:disc; padding-left:30px; display:flex; flex-direction:column; gap:8px; margin:0; }
+    .next-list li { font-size:20px; color:#000; line-height:1.5; }
+    .email-footer-bar { background:#00267f; color:#fff; padding:32px; display:flex; align-items:stretch; justify-content:space-between; gap:32px; }
+    .email-footer-text { flex:1; font-size:20px; line-height:1.5; display:flex; flex-direction:column; gap:16px; }
+    .email-footer-text p { margin:0; }
+    .email-footer-right { display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-end; gap:12px; flex-shrink:0; }
+    .email-footer-right img { width:80px; height:auto; }
+    .email-footer-copy { font-size:20px; color:#fff; white-space:nowrap; margin:0; }
+    .mda-email { background:#fff; }
+    .mda-header { background:#ffc726; padding:24px 32px; }
+    .mda-content { background:#fff; padding:64px 32px 32px; display:flex; flex-direction:column; gap:32px; }
+    .mda-h1 { font-size:40px; font-weight:700; line-height:1.15; color:#000; margin:0; }
+    .mda-summary-table { background:#e5e9f2; }
+    .mda-summary-row { display:flex; align-items:stretch; border-bottom:1px solid #fff; }
+    .mda-summary-row:last-child { border-bottom:1px solid #e5e9f2; }
+    .mda-summary-label { width:304px; flex-shrink:0; padding:8px; font-weight:700; font-size:20px; }
+    .mda-summary-value { flex:1; padding:8px 8px 8px 16px; font-size:20px; }
+    .mda-intro { font-size:20px; color:#000; margin:0; }
+    .mda-sections { display:flex; flex-direction:column; gap:35px; }
+    .mda-section-h2 { font-size:40px; font-weight:700; line-height:1.25; color:#000; margin-bottom:8px; }
+    .mda-data-table { width:100%; }
+    .mda-data-row { display:flex; align-items:stretch; border-bottom:1px solid #e0e4e9; }
+    .mda-data-label { width:304px; flex-shrink:0; padding:8px; font-weight:700; font-size:20px; }
+    .mda-data-value { flex:1; padding:8px 8px 8px 16px; font-size:20px; color:#595959; font-style:italic; }
+    .mda-internal-box { background:#e5e9f2; padding:16px; display:flex; flex-direction:column; gap:8px; }
+    .mda-internal-box p { font-size:20px; font-weight:700; color:#000; margin:0; }
+    .mda-internal-box .fv { font-weight:400; color:#595959; font-style:italic; }
+    .mda-footer { background:#00267f; color:#fff; padding:32px; display:flex; align-items:flex-start; justify-content:space-between; gap:32px; }
+    .mda-footer-text { flex:1; font-size:20px; line-height:1.5; display:flex; flex-direction:column; gap:16px; }
+    .mda-footer-text p { margin:0; }
+    .mda-footer-right { display:flex; flex-direction:column; align-items:flex-end; gap:12px; flex-shrink:0; }
+    .mda-footer-right img { width:80px; height:auto; }
+    .mda-footer-copyright { font-size:20px; color:#fff; white-space:nowrap; margin:0; }
+    .eml-page-badge { display:inline-flex; align-items:center; gap:6px; background:#fff9e9; border:1.5px solid #ffc726; border-radius:4px; padding:6px 14px; font-size:14px; font-weight:600; color:#000; }
+    .mda-page-badge { display:inline-flex; align-items:center; gap:6px; background:#e5e9f2; border:1.5px solid #99a8cc; border-radius:4px; padding:6px 14px; font-size:14px; font-weight:600; color:#000; }
+    .eml-page-label { font-size:14px; font-weight:600; color:#595959; text-transform:uppercase; letter-spacing:0.05em; margin:0; }
+    .eml-page-title { font-size:28px; font-weight:700; color:#000; margin-bottom:8px; }
+    .eml-page-desc { font-size:16px; color:#595959; margin-bottom:24px; }
+    </style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="bg-bb-blue-100 text-bb-white-00">
+  <div class="flex items-center gap-2 px-xl py-2 text-[0.875rem]">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Coat_of_arms_of_Barbados_%282%29.svg/1280px-Coat_of_arms_of_Barbados_%282%29.svg.png" alt="Coat of arms of Barbados" style="height:20px;width:auto;">
+    Official website of the Government of Barbados
+  </div>
+</div>
+
+<!-- Header -->
+<header class="bg-bb-yellow-100">
+  <div class="px-xl py-m">
+    <div class="text-bb-black-00" style="width:355px;height:35px;">
+      <svg width="100%" viewBox="0 0 276 27" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img"><path d="M39.079 21.527C37.5026 21.527 36.103 21.1903 34.8802 20.5168C33.6721 19.8286 32.7219 18.8916 32.0294 17.7057C31.337 16.5051 30.9908 15.1288 30.9908 13.5769C30.9908 12.0249 31.337 10.6559 32.0294 9.47001C32.7219 8.26943 33.6721 7.3324 34.8802 6.65891C36.103 5.97077 37.5026 5.6267 39.079 5.6267C40.0219 5.6267 40.8911 5.7658 41.6867 6.04398C42.4823 6.32216 43.1821 6.71015 43.7861 7.20795C44.4049 7.69111 44.9205 8.24747 45.3331 8.87704L42.858 10.4144C42.6075 10.0191 42.276 9.66767 41.8635 9.3602C41.4657 9.05274 41.0237 8.81116 40.5376 8.63547C40.0514 8.45977 39.5652 8.37192 39.079 8.37192C38.1067 8.37192 37.2448 8.59886 36.4934 9.05274C35.7421 9.49197 35.1527 10.0996 34.7255 10.8756C34.2982 11.6515 34.0846 12.552 34.0846 13.5769C34.0846 14.5871 34.2909 15.4875 34.7034 16.2782C35.1307 17.0688 35.7273 17.691 36.4934 18.1449C37.2595 18.5841 38.1435 18.8038 39.1453 18.8038C39.8967 18.8038 40.567 18.6647 41.1563 18.3865C41.7456 18.0937 42.2171 17.691 42.5707 17.1786C42.9243 16.6661 43.1231 16.0659 43.1673 15.3777H39.5873V13.0278H46.0844V14.8946C46.055 16.3001 45.7382 17.5007 45.1342 18.4963C44.5301 19.4773 43.7051 20.2313 42.6591 20.7584C41.613 21.2708 40.4197 21.527 39.079 21.527Z"></path><path d="M12.5786 0C11.6253 2.46943 10.6536 5.03986 8.57466 7.00774C9.21998 6.80573 10.3493 6.62461 11.0753 6.64203V17.0283L7.988 17.4636C7.878 17.4532 7.84133 17.2895 7.84133 17.0666C7.54434 13.8413 6.74135 11.1316 5.81736 8.32779C5.75136 7.94466 4.58171 6.48181 5.4837 6.73955C5.5937 6.75348 6.80002 7.2202 6.60935 6.99729C4.96671 5.38119 2.56508 4.21788 0.233112 3.87306C0.0277812 3.8243 -0.0932171 3.92183 0.0901136 4.14822C3.18474 8.6726 5.77336 14.012 5.75136 20.3475C6.95401 20.3475 9.86897 19.6718 11.0753 19.6718V27H12.5969L12.9453 6.53406L12.5786 0Z"></path><path d="M12.5786 0C13.5319 2.46943 14.5036 5.03986 16.5825 7.00774C15.9372 6.80573 14.8079 6.62461 14.0819 6.64203V17.0283L17.1692 17.4636C17.2792 17.4532 17.3159 17.2895 17.3159 17.0666C17.6129 13.8413 18.4158 11.1316 19.3398 8.32779C19.4058 7.94466 20.5755 6.48181 19.6735 6.73955C19.5635 6.75348 18.3572 7.2202 18.5478 6.99729C20.1905 5.38119 22.5921 4.21788 24.9241 3.87306C25.1294 3.8243 25.2504 3.92183 25.0671 4.14822C21.9725 8.6726 19.3838 14.012 19.4058 20.3475C18.2032 20.3475 15.2882 19.6718 14.0819 19.6718V27H12.5603L12.2119 6.53406L12.5786 0Z"></path></g></svg></svg>
+    </div>
+  </div>
+</header>
+
+<!-- Alpha banner -->
+<div class="bg-bb-blue-10">
+  <div class="container py-xs text-[1rem]">
+    This page is in <a href="#" class="inline-flex outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10">Alpha</a>. Your feedback helps us improve.
+  </div>
+</div>
+
+<!-- Main -->
+<main>
+  <div class="container py-l max-w-3xl" id="app"></div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-bb-blue-100 text-bb-white-00">
+  <div class="container py-l text-[1rem]">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <p>&copy; 2025 Government of Barbados. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" class="underline underline-offset-2 hover:no-underline text-bb-white-00">Privacy</a>
+        <a href="#" class="underline underline-offset-2 hover:no-underline text-bb-white-00">Terms</a>
+        <a href="#" class="underline underline-offset-2 hover:no-underline text-bb-white-00">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/govbb-framework.js"></script>
+<script>
+const FORM_NAME = 'Certificate by Non-Immigrant Student (Form H-2)';
+const _COAT = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Coat_of_arms_of_Barbados_%282%29.svg/1280px-Coat_of_arms_of_Barbados_%282%29.svg.png';
+const _LOGO = `<svg width="100%" viewBox="0 0 276 27" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img"><g><path d="M39.079 21.527C37.5026 21.527 36.103 21.1903 34.8802 20.5168C33.6721 19.8286 32.7219 18.8916 32.0294 17.7057C31.337 16.5051 30.9908 15.1288 30.9908 13.5769C30.9908 12.0249 31.337 10.6559 32.0294 9.47001C32.7219 8.26943 33.6721 7.3324 34.8802 6.65891C36.103 5.97077 37.5026 5.6267 39.079 5.6267C40.0219 5.6267 40.8911 5.7658 41.6867 6.04398C42.4823 6.32216 43.1821 6.71015 43.7861 7.20795C44.4049 7.69111 44.9205 8.24747 45.3331 8.87704L42.858 10.4144C42.6075 10.0191 42.276 9.66767 41.8635 9.3602C41.4657 9.05274 41.0237 8.81116 40.5376 8.63547C40.0514 8.45977 39.5652 8.37192 39.079 8.37192C38.1067 8.37192 37.2448 8.59886 36.4934 9.05274C35.7421 9.49197 35.1527 10.0996 34.7255 10.8756C34.2982 11.6515 34.0846 12.552 34.0846 13.5769C34.0846 14.5871 34.2909 15.4875 34.7034 16.2782C35.1307 17.0688 35.7273 17.691 36.4934 18.1449C37.2595 18.5841 38.1435 18.8038 39.1453 18.8038C39.8967 18.8038 40.567 18.6647 41.1563 18.3865C41.7456 18.0937 42.2171 17.691 42.5707 17.1786C42.9243 16.6661 43.1231 16.0659 43.1673 15.3777H39.5873V13.0278H46.0844V14.8946C46.055 16.3001 45.7382 17.5007 45.1342 18.4963C44.5301 19.4773 43.7051 20.2313 42.6591 20.7584C41.613 21.2708 40.4197 21.527 39.079 21.527Z"></path><path d="M12.5786 0C11.6253 2.46943 10.6536 5.03986 8.57466 7.00774C9.21998 6.80573 10.3493 6.62461 11.0753 6.64203V17.0283L7.988 17.4636C7.878 17.4532 7.84133 17.2895 7.84133 17.0666C7.54434 13.8413 6.74135 11.1316 5.81736 8.32779C5.75136 7.94466 4.58171 6.48181 5.4837 6.73955C5.5937 6.75348 6.80002 7.2202 6.60935 6.99729C4.96671 5.38119 2.56508 4.21788 0.233112 3.87306C0.0277812 3.8243 -0.0932171 3.92183 0.0901136 4.14822C3.18474 8.6726 5.77336 14.012 5.75136 20.3475C6.95401 20.3475 9.86897 19.6718 11.0753 19.6718V27H12.5969L12.9453 6.53406L12.5786 0Z"></path><path d="M12.5786 0C13.5319 2.46943 14.5036 5.03986 16.5825 7.00774C15.9372 6.80573 14.8079 6.62461 14.0819 6.64203V17.0283L17.1692 17.4636C17.2792 17.4532 17.3159 17.2895 17.3159 17.0666C17.6129 13.8413 18.4158 11.1316 19.3398 8.32779C19.4058 7.94466 20.5755 6.48181 19.6735 6.73955C19.5635 6.75348 18.3572 7.2202 18.5478 6.99729C20.1905 5.38119 22.5921 4.21788 24.9241 3.87306C25.1294 3.8243 25.2504 3.92183 25.0671 4.14822C21.9725 8.6726 19.3838 14.012 19.4058 20.3475C18.2032 20.3475 15.2882 19.6718 14.0819 19.6718V27H12.5603L12.2119 6.53406L12.5786 0Z"></path></g></svg>`;
+
+const FLOW = ['start', 'student-name', 'student-personal', 'school-details', 'emergency-contact', 'local-contact', 'check', 'declaration', 'confirmation', 'applicant-email', 'mda-email'];
+
+const PAGES = {
+  'start': () => `
+    <div class="space-y-8">
+      <h1 class="font-bold text-[3.5rem] leading-[1.15]">Certificate by Non-Immigrant Student (Form H-2)</h1>
+      <p class="text-[1.25rem] leading-relaxed">Complete this form to certify your non-immigrant student status in Barbados (Form H-2). Your school in Barbados must have already accepted you before you apply.</p>
+      <div class="space-y-4">
+        <h2 class="font-bold text-[2rem]">What you will need</h2>
+        <ul class="list-disc pl-6 space-y-2">
+            <li class="text-[1.25rem]">Your passport</li>
+            <li class="text-[1.25rem]">Your school acceptance letter from a Barbados school</li>
+            <li class="text-[1.25rem]">Emergency contact details (overseas)</li>
+            <li class="text-[1.25rem]">Local contact or referee details in Barbados</li>
+        </ul>
+      </div>
+      ${GovBB.startBtn()}
+    </div>`,
+  'student-name': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">What is your name?</h1>
+      <div class="space-y-8">
+        ${GovBB.textField('first-name', 'First name')}
+        ${GovBB.textField('middle-name', 'Middle name(s)', {hint: 'Leave blank if you do not have a middle name'})}
+        ${GovBB.textField('last-name', 'Last name')}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'student-personal': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Your personal details</h1>
+      <div class="space-y-8">
+        ${GovBB.dateField('dob', 'Date of birth', 'For example, 27 03 2005')}
+        ${GovBB.textField('nationality', 'Nationality')}
+        ${GovBB.textField('country-of-origin', 'Country of origin')}
+        ${GovBB.textField('passport-number', 'Passport number')}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'school-details': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Which school will you attend in Barbados?</h1>
+      <div class="space-y-8">
+        ${GovBB.textField('school-name', 'Name of school')}
+        ${GovBB.textField('school-address', 'School address')}
+        ${GovBB.selectField('study-level', 'Level of study', ['Primary', 'Secondary', 'Tertiary / University', 'Vocational / Technical', 'Other'])}
+        ${GovBB.textField('course-name', 'Course or programme name')}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'emergency-contact': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Emergency contact details (overseas)</h1>
+      <div class="space-y-8">
+        ${GovBB.textField('emerg-name', 'Full name')}
+        ${GovBB.selectField('emerg-relationship', 'Relationship to you', ['Parent', 'Guardian', 'Sibling', 'Spouse', 'Other'])}
+        ${GovBB.telField('emerg-phone', 'Phone number', {hint: 'Include country code, e.g. +1-246-555-1234'})}
+        ${GovBB.emailField('emerg-email', 'Email address')}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'local-contact': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Local contact in Barbados</h1>
+      <div class="space-y-8">
+        ${GovBB.textField('local-name', 'Full name')}
+        ${GovBB.selectField('local-relationship', 'Relationship to you', ['Host family', 'Guardian', 'School contact', 'Relative', 'Friend', 'Other'])}
+        ${GovBB.telField('local-phone', 'Phone number', {hint: 'For example, 246-555-1234'})}
+        ${GovBB.emailField('contact-email', 'Email address')}
+        ${GovBB.textField('local-address', 'Address in Barbados')}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+
+
+  'check': () => {
+    const D = GovBB.D;
+    return `
+    <div class="space-y-8">
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check your answers before sending</h1>
+      <div class="space-y-8">
+        <dl class="divide-y divide-bb-grey-00 border-t border-bb-grey-00">
+          {GovBB.checkRows ? GovBB.checkRows() : ""}
+        </dl>
+        ${GovBB.continueBtn('Continue to declaration')}
+      </div>
+    </div>`;
+  },
+
+  'declaration': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Declaration</h1>
+      <div class="space-y-8">
+        <p class="text-[1.25rem] leading-relaxed">By submitting this form, I confirm that the information I have provided is true and correct to the best of my knowledge. I understand that providing false or misleading information may result in my application being rejected or legal action being taken.</p>
+        <div class="flex gap-5 items-start">
+          <button type="button" role="checkbox" aria-checked="false" id="chk-declaration"
+            onclick="GovBB.toggleCheckbox('declaration-agree')"
+            class="relative inline-flex size-12 shrink-0 items-center justify-center bg-bb-white-00 border-2 border-bb-black-00 rounded-sm transition-all outline-none hover:cursor-pointer hover:shadow-form-hover focus-visible:ring-4 focus-visible:ring-bb-teal-100 mt-1">
+          </button>
+          <label class="text-[1.25rem] leading-normal text-bb-black-00 cursor-pointer">I confirm that the information I have provided is true and correct.</label>
+        </div>
+        ${GovBB.continueBtn('Submit application')}
+      </div>
+    </form>`,
+
+  'confirmation': () => `
+    <div class="space-y-8">
+      <div class="bg-bb-teal-00 text-bb-white-00 p-8 rounded-sm space-y-4">
+        <h1 class="font-bold text-[3.5rem] leading-[1.15]">Application submitted</h1>
+        <p class="text-[1.5rem]">Your reference number</p>
+        <p class="text-[2rem] font-bold">${window.__refNumber || ''CSH-' + Math.random().toString(36).substring(2,8).toUpperCase()'}</p>
+      </div>
+            <div class="space-y-4">
+        <h2 class="font-bold text-[2rem]">What happens next</h2>
+        <p class="text-[1.25rem]">We have received your Form H-2 Non-Immigrant Student Certificate.</p>
+        <p class="text-[1.25rem]">Your school in Barbados will be notified.</p>
+        <p class="text-[1.25rem]">Processing usually takes 5–10 working days.</p>
+        <p class="text-[1.25rem]">You will receive a confirmation once your certificate is issued.</p>
+        <p class="text-[1.25rem]">If you have questions, contact the Immigration Department at immigration@gov.bb.</p>
+      </div>
+      ${GovBB.continueBtn('See emails sent')}
+    </div>`,
+
+  'applicant-email': () => {
+    const D = GovBB.D;
+    const ref = window.__refNumber || 'CSH-XXXXXX';
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2,'0');
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const yyyy = today.getFullYear();
+    const subDate = `${dd}/${mm}/${yyyy}`;
+    return `
+    <div class="space-y-6">
+      ${GovBB.backLink()}
+      <div class="eml-page-badge">&#9993; Applicant email &mdash; Certificate by Non-Immigrant Student (Form H-2)</div>
+      <p class="eml-page-label">Email Templates / Applicant Emails</p>
+      <h1 class="eml-page-title">Certificate by Non-Immigrant Student (Form H-2) &mdash; Applicant Confirmation</h1>
+      <p class="eml-page-desc">Sent to the applicant after they submit the Certificate by Non-Immigrant Student (Form H-2) form.</p>
+      <div style="background:#f2f4f6;padding:32px 0;">
+        <div class="email-wrapper">
+          <div class="email-header-bar">${_LOGO}</div>
+          <div class="email-content">
+            <h1 class="email-h1">Application received</h1>
+            <p class="email-greeting">Dear ${D['first-name'] || '[Name]'},</p>
+            <p class="email-body">Thank you for submitting your Certificate by Non-Immigrant Student (Form H-2). We have received your application and will review it shortly.</p>
+            <div class="ref-box">
+              <p class="ref-number">Reference Number: ${ref}</p>
+              <p class="ref-sub">Please keep this reference number for your records.</p>
+            </div>
+            <div class="next-section">
+              <p class="next-heading">What happens next</p>
+              <ul class="next-list">
+                <li>Your Form H-2 Certificate has been received by the Immigration Department.</li>
+                <li>Your school in Barbados will be notified of your application.</li>
+                <li>Processing usually takes 5–10 working days.</li>
+                <li>You will receive a confirmation letter once your certificate is issued.</li>
+                <li>Keep your reference number safe in case you need to follow up.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="email-footer-bar">
+            <div class="email-footer-text">
+              <p>This is an automated confirmation email from the Government of Barbados.</p>
+              <p>If you have any questions, please contact the Immigration Department and include your reference number: <strong>${ref}</strong></p>
+              <p>Please do not reply to this email.</p>
+            </div>
+            <div class="email-footer-right">
+              <img src="${_COAT}" alt="Coat of arms">
+              <p class="email-footer-copy">&copy; 2025 Government of Barbados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      ${GovBB.continueBtn('See MDA email')}
+    </div>`;
+  },
+
+  'mda-email': () => {
+    const D = GovBB.D;
+    const ref = window.__refNumber || 'CSH-XXXXXX';
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2,'0');
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const yyyy = today.getFullYear();
+    const hh = String(today.getHours()).padStart(2,'0');
+    const min = String(today.getMinutes()).padStart(2,'0');
+    const subDate = `${dd}/${mm}/${yyyy}`;
+    const subTime = `${hh}:${min}`;
+    const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
+    return `
+    <div class="space-y-6">
+      ${GovBB.backLink()}
+      <div class="mda-page-badge">&#9993; MDA email &mdash; Certificate by Non-Immigrant Student (Form H-2)</div>
+      <p class="eml-page-label">Email Templates / MDA Emails</p>
+      <h1 class="eml-page-title">MDA Submission Email &mdash; Certificate by Non-Immigrant Student (Form H-2)</h1>
+      <p class="eml-page-desc">Sent to the Immigration Department when a citizen submits the Certificate by Non-Immigrant Student (Form H-2) form.</p>
+      <div style="background:#f2f4f6;padding:32px 0;">
+        <div class="mda-email">
+          <div class="mda-header">${_LOGO}</div>
+          <div class="mda-content">
+            <h1 class="mda-h1">You have received a Certificate by Non-Immigrant Student (Form H-2) submission</h1>
+            <div class="mda-summary-table">
+              <div class="mda-summary-row"><div class="mda-summary-label">Service:</div><div class="mda-summary-value">Certificate by Non-Immigrant Student (Form H-2)</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission ID:</div><div class="mda-summary-value">${ref}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission date:</div><div class="mda-summary-value">${subDate}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Submission time:</div><div class="mda-summary-value">${subTime}</div></div>
+              <div class="mda-summary-row"><div class="mda-summary-label">Applicant email:</div><div class="mda-summary-value">${D['contact-email'] || '&mdash;'}</div></div>
+            </div>
+            <p class="mda-intro">Here is the data from this submission:</p>
+            <div class="mda-sections">
+              <div>
+                <p class="mda-section-h2">Student details</p>
+                <div class="mda-data-table">
+                  ${dr('Full name', [D['first-name'], D['middle-name'], D['last-name']].filter(Boolean).join(' '))}
+                  ${dr('Date of birth', [D['dob-day'], D['dob-month'], D['dob-year']].filter(Boolean).join('/'))}
+                  ${dr('Nationality', D['nationality'])}
+                  ${dr('Country of origin', D['country-of-origin'])}
+                  ${dr('Passport number', D['passport-number'])}
+                </div>
+              </div>
+              <div>
+                <p class="mda-section-h2">School details</p>
+                <div class="mda-data-table">
+                  ${dr('School name', D['school-name'])}
+                  ${dr('School address', D['school-address'])}
+                  ${dr('Level of study', D['study-level'])}
+                  ${dr('Course name', D['course-name'])}
+                </div>
+              </div>
+              <div>
+                <p class="mda-section-h2">Emergency contact (overseas)</p>
+                <div class="mda-data-table">
+                  ${dr('Name', D['emerg-name'])}
+                  ${dr('Relationship', D['emerg-relationship'])}
+                  ${dr('Phone', D['emerg-phone'])}
+                  ${dr('Email', D['emerg-email'])}
+                </div>
+              </div>
+              <div>
+                <p class="mda-section-h2">Local contact</p>
+                <div class="mda-data-table">
+                  ${dr('Name', D['local-name'])}
+                  ${dr('Relationship', D['local-relationship'])}
+                  ${dr('Phone', D['local-phone'])}
+                  ${dr('Email', D['contact-email'])}
+                  ${dr('Address', D['local-address'])}
+                </div>
+              </div>
+              <div class="mda-internal-box">
+                <p>Due date: <span class="fv">[To be filled by officer]</span></p>
+                <p>Officer assigned: <span class="fv">[To be filled by officer]</span></p>
+                <p>Reference: <span class="fv">[To be filled by officer]</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="mda-footer">
+            <div class="mda-footer-text">
+              <p>This is an automated notification from the Government of Barbados.</p>
+              <p>Please <strong>do not reply</strong> to this email.</p>
+            </div>
+            <div class="mda-footer-right">
+              <img src="${_COAT}" alt="Coat of arms">
+              <p class="mda-footer-copyright">&copy; 2025 Government of Barbados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../index.html" class="inline-flex outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00">Return to all forms</a>
+    </div>`;
+  }
+};
+
+function validate(pageId) {
+  const D = GovBB.D;
+  const errors = [];
+  if (pageId === 'student-name') {
+    if (!D['first-name']) errors.push({id:'first-name', msg:'First name – Enter your first name'});
+    if (!D['last-name'])  errors.push({id:'last-name',  msg:'Last name – Enter your last name'});
+  }
+  if (pageId === 'student-personal') {
+    if (!D['dob-day'] || !D['dob-month'] || !D['dob-year']) errors.push({id:'dob-day', msg:'Date of birth – Enter your date of birth'});
+    if (!D['nationality']) errors.push({id:'nationality', msg:'Nationality – Enter your nationality'});
+    if (!D['passport-number']) errors.push({id:'passport-number', msg:'Passport number – Enter your passport number'});
+  }
+  if (pageId === 'school-details') {
+    if (!D['school-name']) errors.push({id:'school-name', msg:'School name – Enter the name of your school'});
+  }
+  if (pageId === 'local-contact') {
+    if (!D['contact-email']) errors.push({id:'contact-email', msg:'Email – Enter your local contact email address'});
+  }
+  return errors;
+}
+
+GovBB.init({
+  formName: FORM_NAME,
+  flow: FLOW,
+  pages: PAGES,
+  validate: validate,
+});
+</script>
+</body>
+</html>
