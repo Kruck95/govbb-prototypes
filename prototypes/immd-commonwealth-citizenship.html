@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commonwealth Citizenship Registration – Immigration Department</title>
+  <title>Commonwealth Citizenship Registration – Citizenship, Immigration and Passports Department</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet">
@@ -64,7 +64,6 @@
 </head>
 <body>
 
-<!-- Top bar -->
 <div class="bg-bb-blue-100 text-bb-white-00">
   <div class="flex items-center gap-2 px-xl py-2 text-[0.875rem]">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Coat_of_arms_of_Barbados_%282%29.svg/1280px-Coat_of_arms_of_Barbados_%282%29.svg.png" alt="Coat of arms of Barbados" style="height:20px;width:auto;">
@@ -72,7 +71,6 @@
   </div>
 </div>
 
-<!-- Header -->
 <header class="bg-bb-yellow-100">
   <div class="px-xl py-m">
     <div class="text-bb-black-00" style="width:355px;height:35px;">
@@ -81,19 +79,16 @@
   </div>
 </header>
 
-<!-- Alpha banner -->
 <div class="bg-bb-blue-10">
   <div class="container py-xs text-[1rem]">
     This page is in <a href="#" class="inline-flex outline-none underline-offset-2 underline hover:no-underline active:bg-bb-yellow-100 active:no-underline focus-visible:bg-bb-yellow-100 focus-visible:no-underline active:text-bb-black-00 focus-visible:text-bb-black-00 text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10">Alpha</a>. Your feedback helps us improve.
   </div>
 </div>
 
-<!-- Main -->
 <main>
   <div class="container py-l max-w-3xl" id="app"></div>
 </main>
 
-<!-- Footer -->
 <footer class="bg-bb-blue-100 text-bb-white-00">
   <div class="container py-l text-[1rem]">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -113,53 +108,25 @@ const FORM_NAME = 'Commonwealth Citizenship Registration';
 const _COAT = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Coat_of_arms_of_Barbados_%282%29.svg/1280px-Coat_of_arms_of_Barbados_%282%29.svg.png';
 const _LOGO = `<svg width="100%" viewBox="0 0 276 27" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img"><g><path d="M39.079 21.527C37.5026 21.527 36.103 21.1903 34.8802 20.5168C33.6721 19.8286 32.7219 18.8916 32.0294 17.7057C31.337 16.5051 30.9908 15.1288 30.9908 13.5769C30.9908 12.0249 31.337 10.6559 32.0294 9.47001C32.7219 8.26943 33.6721 7.3324 34.8802 6.65891C36.103 5.97077 37.5026 5.6267 39.079 5.6267C40.0219 5.6267 40.8911 5.7658 41.6867 6.04398C42.4823 6.32216 43.1821 6.71015 43.7861 7.20795C44.4049 7.69111 44.9205 8.24747 45.3331 8.87704L42.858 10.4144C42.6075 10.0191 42.276 9.66767 41.8635 9.3602C41.4657 9.05274 41.0237 8.81116 40.5376 8.63547C40.0514 8.45977 39.5652 8.37192 39.079 8.37192C38.1067 8.37192 37.2448 8.59886 36.4934 9.05274C35.7421 9.49197 35.1527 10.0996 34.7255 10.8756C34.2982 11.6515 34.0846 12.552 34.0846 13.5769C34.0846 14.5871 34.2909 15.4875 34.7034 16.2782C35.1307 17.0688 35.7273 17.691 36.4934 18.1449C37.2595 18.5841 38.1435 18.8038 39.1453 18.8038C39.8967 18.8038 40.567 18.6647 41.1563 18.3865C41.7456 18.0937 42.2171 17.691 42.5707 17.1786C42.9243 16.6661 43.1231 16.0659 43.1673 15.3777H39.5873V13.0278H46.0844V14.8946C46.055 16.3001 45.7382 17.5007 45.1342 18.4963C44.5301 19.4773 43.7051 20.2313 42.6591 20.7584C41.613 21.2708 40.4197 21.527 39.079 21.527Z"></path><path d="M12.5786 0C11.6253 2.46943 10.6536 5.03986 8.57466 7.00774C9.21998 6.80573 10.3493 6.62461 11.0753 6.64203V17.0283L7.988 17.4636C7.878 17.4532 7.84133 17.2895 7.84133 17.0666C7.54434 13.8413 6.74135 11.1316 5.81736 8.32779C5.75136 7.94466 4.58171 6.48181 5.4837 6.73955C5.5937 6.75348 6.80002 7.2202 6.60935 6.99729C4.96671 5.38119 2.56508 4.21788 0.233112 3.87306C0.0277812 3.8243 -0.0932171 3.92183 0.0901136 4.14822C3.18474 8.6726 5.77336 14.012 5.75136 20.3475C6.95401 20.3475 9.86897 19.6718 11.0753 19.6718V27H12.5969L12.9453 6.53406L12.5786 0Z"></path><path d="M12.5786 0C13.5319 2.46943 14.5036 5.03986 16.5825 7.00774C15.9372 6.80573 14.8079 6.62461 14.0819 6.64203V17.0283L17.1692 17.4636C17.2792 17.4532 17.3159 17.2895 17.3159 17.0666C17.6129 13.8413 18.4158 11.1316 19.3398 8.32779C19.4058 7.94466 20.5755 6.48181 19.6735 6.73955C19.5635 6.75348 18.3572 7.2202 18.5478 6.99729C20.1905 5.38119 22.5921 4.21788 24.9241 3.87306C25.1294 3.8243 25.2504 3.92183 25.0671 4.14822C21.9725 8.6726 19.3838 14.012 19.4058 20.3475C18.2032 20.3475 15.2882 19.6718 14.0819 19.6718V27H12.5603L12.2119 6.53406L12.5786 0Z"></path></g></svg>`;
 
-const FLOW = ['start', 'eligibility-check', 'applicant-name', 'personal-details', 'barbados-connection', 'contact', 'check', 'declaration', 'confirmation', 'applicant-email', 'mda-email'];
+const FLOW = ['start', 'personal-details', 'marital-status', 'citizenship-type', 'barbados-residence', 'crown-service', 'renunciation', 'check', 'declaration', 'confirmation', 'applicant-email', 'mda-email'];
 
 const PAGES = {
   'start': () => `
     <div class="space-y-8">
       <h1 class="font-bold text-[3.5rem] leading-[1.15]">Commonwealth Citizenship Registration</h1>
-      <p class="text-[1.25rem] leading-relaxed">Apply to register as a citizen of Barbados under the Commonwealth citizenship provisions. You must be a citizen of a Commonwealth country and meet the eligibility requirements.</p>
+      <p class="text-[1.25rem] leading-relaxed">Apply to register as a citizen of Barbados via Commonwealth or Irish citizenship with at least 5 years\'s residence in Barbados.</p>
       <div class="space-y-4">
         <h2 class="font-bold text-[2rem]">What you will need</h2>
         <ul class="list-disc pl-6 space-y-2">
-            <li class="text-[1.25rem]">Your Commonwealth passport or travel document</li>
-            <li class="text-[1.25rem]">Proof of your connection to Barbados</li>
-            <li class="text-[1.25rem]">Evidence of your residency in Barbados</li>
-            <li class="text-[1.25rem]">Your birth certificate or marriage certificate (if applicable)</li>
+            <li class="text-[1.25rem]">Your Commonwealth or Irish passport</li>
+            <li class="text-[1.25rem]">Your birth certificate</li>
+            <li class="text-[1.25rem]">Your father's birth certificate (if applicable)</li>
+            <li class="text-[1.25rem]">Proof of at least 5 years' residence in Barbados</li>
+            <li class="text-[1.25rem]">Marriage certificate (if married)</li>
         </ul>
       </div>
       ${GovBB.startBtn()}
     </div>`,
-  'eligibility-check': () => `
-    <form novalidate>
-      ${GovBB.backLink()}
-      ${GovBB.caption()}
-      
-      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Are you eligible to apply?</h1>
-      <div class="space-y-8">
-        ${GovBB.radioGroup('commonwealth-national', 'Are you a citizen of a Commonwealth country?', ['Yes', 'No'])}
-        ${GovBB.selectField('citizenship-route', 'What is your basis for applying?', [
-          'Birth in Barbados', 'Descent from a Barbadian parent', 'Marriage to a Barbadian citizen',
-          'Crown Service', 'Long residence in Barbados', 'Other'
-        ])}
-        ${GovBB.continueBtn()}
-      </div>
-    </form>`,
-  'applicant-name': () => `
-    <form novalidate>
-      ${GovBB.backLink()}
-      ${GovBB.caption()}
-      
-      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">What is your name?</h1>
-      <div class="space-y-8">
-        ${GovBB.selectField('title', 'Title', ['Mr', 'Mrs', 'Miss', 'Ms', 'Dr', 'Prof'])}
-        ${GovBB.textField('first-name', 'First name')}
-        ${GovBB.textField('middle-name', 'Middle name(s)', {hint: 'Leave blank if none'})}
-        ${GovBB.textField('last-name', 'Last name')}
-        ${GovBB.continueBtn()}
-      </div>
-    </form>`,
   'personal-details': () => `
     <form novalidate>
       ${GovBB.backLink()}
@@ -167,36 +134,105 @@ const PAGES = {
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Your personal details</h1>
       <div class="space-y-8">
+        ${GovBB.textField('first-name', 'First name')}
+        ${GovBB.textField('middle-name', 'Middle name(s)', {hint: 'Leave blank if none'})}
+        ${GovBB.textField('last-name', 'Last name')}
         ${GovBB.dateField('dob', 'Date of birth', 'For example, 27 03 1975')}
-        ${GovBB.textField('nationality', 'Current nationality')}
-        ${GovBB.textField('commonwealth-country', 'Commonwealth country of citizenship')}
-        ${GovBB.textField('passport-number', 'Passport number')}
+        ${GovBB.textField('place-of-birth', 'Place of birth', {hint: 'City and country'})}
+        ${GovBB.textField('father-name', "Father's full name")}
+        ${GovBB.textField('father-place-of-birth', "Father's place of birth", {hint: 'City and country'})}
         ${GovBB.continueBtn()}
       </div>
     </form>`,
-  'barbados-connection': () => `
+  'marital-status': () => `
     <form novalidate>
       ${GovBB.backLink()}
       ${GovBB.caption()}
       
-      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Your connection to Barbados</h1>
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Your marital status</h1>
       <div class="space-y-8">
-        ${GovBB.textareaField('claim-details', 'Describe your connection to Barbados', {hint: 'Explain the basis of your application, for example how long you have lived here or your family connection', rows: 4})}
-        ${GovBB.textField('years-in-barbados', 'How many years have you lived in Barbados?', {inputmode: 'numeric'})}
-        ${GovBB.textField('bb-address', 'Your current address in Barbados')}
-        ${GovBB.selectField('bb-parish', 'Parish', GovBB.PARISHES)}
+        ${GovBB.radioGroup('marital-status', 'What is your marital status?', ['Single', 'Married', 'Widowed', 'Divorced'])}
+        <div id="spouse-block" style="display:none;">
+          ${GovBB.textField('spouse-name', 'Spouse full name')}
+          ${GovBB.textField('spouse-nationality', 'Spouse nationality')}
+        </div>
+        <script>
+          document.addEventListener('change', function(e) {
+            if (e.target.name === 'marital-status') {
+              document.getElementById('spouse-block').style.display =
+                e.target.value === 'Married' ? 'block' : 'none';
+            }
+          });
+        <\/script>
         ${GovBB.continueBtn()}
       </div>
     </form>`,
-  'contact': () => `
+  'citizenship-type': () => `
     <form novalidate>
       ${GovBB.backLink()}
       ${GovBB.caption()}
       
-      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Your contact details</h1>
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">What type of citizenship are you applying under?</h1>
       <div class="space-y-8">
-        ${GovBB.telField('phone', 'Phone number', {hint: 'For example, 246-555-1234'})}
-        ${GovBB.emailField('contact-email', 'Email address')}
+        ${GovBB.radioGroup('citizenship-type', 'Select the citizenship type', [
+          'Commonwealth citizen', 'Citizen of the Republic of Ireland'
+        ])}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'barbados-residence': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Your residence in Barbados</h1>
+      <div class="space-y-8">
+        ${GovBB.textareaField('barbados-residence', 'List your addresses in Barbados, with dates', {hint: 'Include street address, from date, to date. You need at least 5 years total residence.', rows: 5})}
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'crown-service': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Crown Service</h1>
+      <div class="space-y-8">
+        ${GovBB.radioGroup('crown-service', 'Have you served in the Crown Service?', ['Yes', 'No'])}
+        <div id="crown-service-block" style="display:none;">
+          ${GovBB.textareaField('crown-service-details', 'Describe your Crown Service', {hint: 'Include the department, your role, and dates', rows: 3})}
+        </div>
+        <script>
+          document.addEventListener('change', function(e) {
+            if (e.target.name === 'crown-service') {
+              document.getElementById('crown-service-block').style.display =
+                e.target.value === 'Yes' ? 'block' : 'none';
+            }
+          });
+        <\/script>
+        ${GovBB.continueBtn()}
+      </div>
+    </form>`,
+  'renunciation': () => `
+    <form novalidate>
+      ${GovBB.backLink()}
+      ${GovBB.caption()}
+      
+      <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Renunciation of citizenship</h1>
+      <div class="space-y-8">
+        ${GovBB.radioGroup('renunciation', 'Have you previously renounced or been deprived of Barbados citizenship?', ['Yes', 'No'])}
+        <div id="renunciation-block" style="display:none;">
+          ${GovBB.textareaField('renunciation-details', 'Provide details', {rows: 3})}
+        </div>
+        <script>
+          document.addEventListener('change', function(e) {
+            if (e.target.name === 'renunciation') {
+              document.getElementById('renunciation-block').style.display =
+                e.target.value === 'Yes' ? 'block' : 'none';
+            }
+          });
+        <\/script>
+        ${GovBB.emailField('contact-email', 'Your email address')}
         ${GovBB.continueBtn()}
       </div>
     </form>`,
@@ -248,9 +284,8 @@ const PAGES = {
         <p class="text-[1.25rem]">We have received your Commonwealth Citizenship Registration application.</p>
         <p class="text-[1.25rem]">A citizenship officer will review your application.</p>
         <p class="text-[1.25rem]">Processing usually takes 8–12 weeks.</p>
-        <p class="text-[1.25rem]">You may be asked to attend an interview.</p>
-        <p class="text-[1.25rem]">You will receive a decision by email or letter.</p>
-        <p class="text-[1.25rem]">If you have questions, contact the Immigration Department at immigration@gov.bb.</p>
+        <p class="text-[1.25rem]">You may be required to attend an interview.</p>
+        <p class="text-[1.25rem]">If you have questions, contact the CIPD at cipd@gov.bb.</p>
       </div>
       ${GovBB.continueBtn('See emails sent')}
     </div>`,
@@ -285,18 +320,17 @@ const PAGES = {
               <p class="next-heading">What happens next</p>
               <ul class="next-list">
                 <li>We have received your Commonwealth Citizenship Registration application.</li>
-                <li>Your application will be reviewed by a citizenship officer.</li>
+                <li>A citizenship officer will review your application.</li>
                 <li>Processing usually takes 8–12 weeks.</li>
                 <li>You may be required to attend an interview.</li>
-                <li>You will be contacted by email or letter with a decision.</li>
-                <li>Keep your reference number safe in case you need to follow up.</li>
+                <li>You will receive a decision by email or letter.</li>
               </ul>
             </div>
           </div>
           <div class="email-footer-bar">
             <div class="email-footer-text">
               <p>This is an automated confirmation email from the Government of Barbados.</p>
-              <p>If you have any questions, please contact the Immigration Department and include your reference number: <strong>${ref}</strong></p>
+              <p>If you have any questions, please contact the CIPD and include your reference number: <strong>${ref}</strong></p>
               <p>Please do not reply to this email.</p>
             </div>
             <div class="email-footer-right">
@@ -328,7 +362,7 @@ const PAGES = {
       <div class="mda-page-badge">&#9993; MDA email &mdash; Commonwealth Citizenship Registration</div>
       <p class="eml-page-label">Email Templates / MDA Emails</p>
       <h1 class="eml-page-title">MDA Submission Email &mdash; Commonwealth Citizenship Registration</h1>
-      <p class="eml-page-desc">Sent to the Immigration Department when a citizen submits the Commonwealth Citizenship Registration form.</p>
+      <p class="eml-page-desc">Sent to the CIPD when a citizen submits the Commonwealth Citizenship Registration form.</p>
       <div style="background:#f2f4f6;padding:32px 0;">
         <div class="mda-email">
           <div class="mda-header">${_LOGO}</div>
@@ -348,24 +382,26 @@ const PAGES = {
                 <div class="mda-data-table">
                   ${dr('Full name', [D['first-name'], D['middle-name'], D['last-name']].filter(Boolean).join(' '))}
                   ${dr('Date of birth', [D['dob-day'], D['dob-month'], D['dob-year']].filter(Boolean).join('/'))}
-                  ${dr('Nationality', D['nationality'])}
-                  ${dr('Commonwealth country', D['commonwealth-country'])}
-                  ${dr('Passport number', D['passport-number'])}
+                  ${dr('Place of birth', D['place-of-birth'])}
+                  ${dr("Father's name", D['father-name'])}
+                  ${dr("Father's place of birth", D['father-place-of-birth'])}
                 </div>
               </div>
               <div>
-                <p class="mda-section-h2">Eligibility basis</p>
+                <p class="mda-section-h2">Marital status</p>
                 <div class="mda-data-table">
-                  ${dr('Citizenship route', D['citizenship-route'])}
-                  ${dr('Claim details', D['claim-details'])}
-                  ${dr('Years in Barbados', D['years-in-barbados'])}
-                  ${dr('Address in Barbados', D['bb-address'] + (D['bb-parish'] ? ', ' + D['bb-parish'] : ''))}
+                  ${dr('Status', D['marital-status'])}
+                  ${dr('Spouse name', D['spouse-name'])}
+                  ${dr('Spouse nationality', D['spouse-nationality'])}
                 </div>
               </div>
               <div>
-                <p class="mda-section-h2">Contact details</p>
+                <p class="mda-section-h2">Citizenship type and residence</p>
                 <div class="mda-data-table">
-                  ${dr('Phone', D['phone'])}
+                  ${dr('Applying as', D['citizenship-type'])}
+                  ${dr('Barbados residence', D['barbados-residence'])}
+                  ${dr('Crown Service?', D['crown-service'])}
+                  ${dr('Renunciation?', D['renunciation'])}
                   ${dr('Email', D['contact-email'])}
                 </div>
               </div>
@@ -396,16 +432,19 @@ const PAGES = {
 function validate(pageId) {
   const D = GovBB.D;
   const errors = [];
-  if (pageId === 'applicant-name') {
+  if (pageId === 'personal-details') {
     if (!D['first-name']) errors.push({id:'first-name', msg:'First name – Enter your first name'});
     if (!D['last-name'])  errors.push({id:'last-name',  msg:'Last name – Enter your last name'});
-  }
-  if (pageId === 'personal-details') {
     if (!D['dob-day'] || !D['dob-month'] || !D['dob-year']) errors.push({id:'dob-day', msg:'Date of birth – Enter your date of birth'});
-    if (!D['nationality']) errors.push({id:'nationality', msg:'Nationality – Enter your current nationality'});
-    if (!D['passport-number']) errors.push({id:'passport-number', msg:'Passport number – Enter your passport number'});
+    if (!D['place-of-birth']) errors.push({id:'place-of-birth', msg:'Place of birth – Enter your place of birth'});
   }
-  if (pageId === 'contact') {
+  if (pageId === 'citizenship-type') {
+    if (!D['citizenship-type']) errors.push({id:'citizenship-type', msg:'Citizenship type – Select the citizenship type'});
+  }
+  if (pageId === 'barbados-residence') {
+    if (!D['barbados-residence']) errors.push({id:'barbados-residence', msg:'Residence – List your addresses in Barbados with dates'});
+  }
+  if (pageId === 'renunciation') {
     if (!D['contact-email']) errors.push({id:'contact-email', msg:'Email – Enter your email address'});
   }
   return errors;
