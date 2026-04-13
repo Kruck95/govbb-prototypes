@@ -1622,19 +1622,19 @@
     <div class="border-t-2 border-bb-grey-00 pt-l">
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
         <div class="text-center">
-          <p class="font-bold text-[3rem] leading-none text-bb-teal-00">13</p>
+          <p id="stat-forms" class="font-bold text-[3rem] leading-none text-bb-teal-00">—</p>
           <p class="text-[1rem] text-bb-mid-grey-00 mt-1">Forms prototyped</p>
         </div>
         <div class="text-center">
-          <p class="font-bold text-[3rem] leading-none text-bb-teal-00">2</p>
+          <p id="stat-agencies" class="font-bold text-[3rem] leading-none text-bb-teal-00">—</p>
           <p class="text-[1rem] text-bb-mid-grey-00 mt-1">Government agencies</p>
         </div>
         <div class="text-center">
-          <p class="font-bold text-[3rem] leading-none text-bb-teal-00">8</p>
+          <p id="stat-individuals" class="font-bold text-[3rem] leading-none text-bb-teal-00">—</p>
           <p class="text-[1rem] text-bb-mid-grey-00 mt-1">For individuals</p>
         </div>
         <div class="text-center">
-          <p class="font-bold text-[3rem] leading-none text-bb-teal-00">3</p>
+          <p id="stat-employers" class="font-bold text-[3rem] leading-none text-bb-teal-00">—</p>
           <p class="text-[1rem] text-bb-mid-grey-00 mt-1">For employers</p>
         </div>
       </div>
@@ -1660,6 +1660,23 @@
 </footer>
 
 <script>
+function updateStats() {
+  var prototypeSections = document.querySelectorAll('section[data-section]:not([data-section="email-templates"])');
+  var protoCards = [];
+  prototypeSections.forEach(function(section) {
+    section.querySelectorAll('a.form-card').forEach(function(card) { protoCards.push(card); });
+  });
+  var agencies = new Set();
+  prototypeSections.forEach(function(s) { agencies.add(s.getAttribute('data-section')); });
+  var individuals = protoCards.filter(function(c) { return (c.getAttribute('data-audience') || '').indexOf('individual') !== -1; }).length;
+  var employers = protoCards.filter(function(c) { return (c.getAttribute('data-audience') || '').indexOf('employer') !== -1; }).length;
+  document.getElementById('stat-forms').textContent = protoCards.length;
+  document.getElementById('stat-agencies').textContent = agencies.size;
+  document.getElementById('stat-individuals').textContent = individuals;
+  document.getElementById('stat-employers').textContent = employers;
+}
+document.addEventListener('DOMContentLoaded', updateStats);
+
 function filterForms(audience) {
   document.querySelectorAll('.filter-btn').forEach(function(btn) {
     var isActive = btn.getAttribute('data-filter') === audience;
