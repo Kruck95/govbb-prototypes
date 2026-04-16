@@ -235,14 +235,9 @@ const PAGES = {
 
   'declaration': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Witness declaration</h1>
       <p class="text-[1.25rem] leading-normal mb-8">The person named in this certificate — <strong>${GovBB.D['first-name'] || 'the claimant'} ${GovBB.D['last-name'] || ''}</strong> — must now have an authorised witness complete this section to confirm they were alive on the date below.</p>
-      <div class="bg-bb-blue-10 border-l-4 border-bb-blue-40 p-s mb-8">
-        <p class="font-bold text-[1.25rem]">Who can be a witness?</p>
-        <p class="text-[1.25rem] mt-2">A Magistrate, Justice of the Peace, Bank Manager, Medical Practitioner, Attorney-at-Law, Member of Parliament, Senior Civil Servant, Gazetted Police Officer, or Senior NIS Officer. Family members cannot witness this form.</p>
-      </div>
       <div class="space-y-8">
         ${GovBB.dateField('alive-date', 'Date the claimant was confirmed alive', 'For example, 15 06 2025')}
         ${GovBB.textField('witness-name', 'Witness full name (print clearly)')}
@@ -262,7 +257,8 @@ const PAGES = {
             <label for="confirm-checkbox" class="text-[1.25rem] leading-normal text-bb-black-00 cursor-pointer pt-2">I confirm that the information above is true and correct to the best of my knowledge.</label>
           </div>
         </div>
-        <div class="mt-8">
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
           <button type="button" onclick="next()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-teal-00 text-bb-white-00 hover:bg-[#1a777d] hover:shadow-[inset_0_0_0_4px_rgba(222,245,246,0.10)] active:bg-[#0a4549] active:shadow-[inset_0_0_0_3px_rgba(0,0,0,0.20)] px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Submit certificate</button>
         </div>
       </div>

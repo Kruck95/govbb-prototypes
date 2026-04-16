@@ -479,14 +479,9 @@ const PAGES = {
 
   'declaration': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Declaration</h1>
       <div class="space-y-8">
-        <div class="bg-bb-blue-10 border-l-4 border-bb-blue-40 p-6 space-y-3">
-          <p class="text-[1.25rem]">I declare that the information given on this form is true to the best of my knowledge and belief.</p>
-          <p class="text-[1.25rem]"><strong>Warning:</strong> Any person who knowingly makes a false statement for the purpose of obtaining benefit commits a criminal offence punishable by a fine or imprisonment or both under the National Insurance and Social Security Act, Cap. 47.</p>
-        </div>
         <div class="space-y-4">
           <div class="flex gap-4 items-start">
             <button type="button" role="checkbox" id="confirm-true" aria-checked="${GovBB.D['confirm-true']==='true'?'true':'false'}" onclick="GovBB.toggleCheckbox('confirm-true');GovBB.render()"
@@ -511,7 +506,11 @@ const PAGES = {
           </div>
         </div>
         <p class="text-[1.25rem] text-bb-mid-grey-00">Date: ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
-        ${GovBB.continueBtn('Submit claim')}
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Submit application</button>
+        </div>
+        
       </div>
     </form>`,
 

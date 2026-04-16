@@ -314,18 +314,18 @@ const PAGES = {
   /* ── Declaration ── */
   'declaration': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Declaration</h1>
       <div class="space-y-8">
-        <div class="bg-bb-blue-10 border-l-4 border-bb-blue-40 p-s rounded-sm">
-          <p class="text-[1.25rem] leading-relaxed">By sending this form, I declare that the information I have given is true and correct. I understand that giving false information may lead to my application being rejected.</p>
-        </div>
         ${GovBB.checkboxItem('decl-agree', 'I agree with the declaration above')}
         ${GovBB.textField('decl-first-name', 'Your first name')}
         ${GovBB.textField('decl-last-name', 'Your last name')}
         ${GovBB.emailField('decl-email', 'Your email address', { hint: 'We will send your confirmation here' })}
-        ${GovBB.continueBtn('Submit application')}
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Submit application</button>
+        </div>
+        
       </div>
     </form>`,
 

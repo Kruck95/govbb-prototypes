@@ -207,17 +207,9 @@ const PAGES = {
   /* ── Page 4: Declaration ───────────────────── */
   'declaration': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Declaration</h1>
       <div class="space-y-8">
-
-        <div class="bg-bb-blue-10 border-l-4 border-bb-blue-40 p-6 space-y-4">
-          <p class="text-[1.25rem] leading-normal font-bold">Declaration</p>
-          <p class="text-[1.25rem] leading-normal">
-            I certify that the information provided is true and correct. I am authorised to register this employer for NIS Online Services.
-          </p>
-        </div>
 
         <div class="bg-bb-teal-10 border-l-4 border-bb-teal-100 p-6">
           <p class="text-[1.25rem] leading-normal">
@@ -229,8 +221,11 @@ const PAGES = {
           <span class="field-error hidden text-bb-red-00 text-[1.25rem] leading-normal block mb-2" id="err-declaration-consent"></span>
           ${GovBB.checkboxItem('declaration-consent', 'I confirm I am authorised to submit this registration')}
         </div>
-
-        ${GovBB.continueBtn('Submit application')}
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Submit application</button>
+        </div>
+        
       </div>
     </form>`,
 

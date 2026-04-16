@@ -670,7 +670,6 @@ const PAGES = {
     const companyName = GovBB.D['company-name'] || '[Company name]';
     return `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Statutory declaration</h1>
       <div class="border-l-4 border-bb-blue-40 pl-s mb-8 space-y-3">
@@ -691,7 +690,11 @@ const PAGES = {
         </div>
         ${fieldWrap('declarant-name','Full name of declarant','Full name of the person signing this declaration.',inputHtml('declarant-name','text',''))}
         ${fieldWrap('declarant-capacity','Capacity','Your position — e.g., Director, Authorised Signatory, Registered Agent.',inputHtml('declarant-capacity','text',''))}
-        ${GovBB.continueBtn('Submit application')}
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Submit application</button>
+        </div>
+        
       </div>
     </form>`;
   },
