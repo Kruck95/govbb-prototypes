@@ -115,7 +115,7 @@
 /* ───────── Form-specific configuration ───────── */
 const FORM_NAME = 'Application to Use State Land';
 
-const FLOW = ['start', 'eligibility', 'applicant-details', 'land-use', 'check', 'declaration', 'confirmation', 'applicant-email', 'mda-email'];
+const FLOW = ['start', 'eligibility', 'applicant-details', 'land-use', 'check', 'declaration', 'confirmation'];
 
 function getFlow() {
   return FLOW;
@@ -208,8 +208,7 @@ const PAGES = {
           ${residentQuestion}
           ${registeredQuestion}
           ${ineligibleNotice}
-          ${(canContinue || (!isIndividual && !isOrg)) && !notResident && !notRegistered ? GovBB.continueBtn() : (canContinue ? GovBB.continueBtn() : '')}
-          ${(!D['applicant-type']) ? GovBB.continueBtn() : ''}
+          ${(notResident || notRegistered) ? '' : GovBB.continueBtn()}
         </div>
       </form>`;
   },
