@@ -305,7 +305,6 @@ const PAGES = {
 
   'eligibility': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Who is registering the business name?</h1>
       <div class="space-y-8">
@@ -314,7 +313,11 @@ const PAGES = {
           { value: 'Partnership', label: 'Partnership' },
           { value: 'Corporation', label: 'Corporation' }
         ])}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
@@ -322,7 +325,6 @@ const PAGES = {
     const isCorp = GovBB.D['applicant-type'] === 'Corporation';
     return `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Tell us about the business</h1>
       <div class="space-y-8">
@@ -333,7 +335,11 @@ const PAGES = {
         ${GovBB.selectField('business-parish', 'Parish', GovBB.PARISHES)}
         ${GovBB.dateField('commencement', 'Date the business started (optional)', 'If the business has already started, enter the date it started. For example, 01 06 2024')}
         ${isCorp ? GovBB.textField('corporate-name', 'Corporate name of corporation', { hint: 'The full legal name of the corporation as registered.' }) : ''}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`;
   },
@@ -347,7 +353,6 @@ const PAGES = {
     }
     return `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-4">Tell us about the owner(s)</h1>
       <p class="text-[1.25rem] text-bb-mid-grey-00 mb-8">Add details for each individual owner. For a sole trader, you only need to add one person.</p>
@@ -358,7 +363,11 @@ const PAGES = {
             + Add another owner
           </button>
         </div>
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`;
   },
@@ -367,7 +376,6 @@ const PAGES = {
     const isCorp = GovBB.D['applicant-type'] === 'Corporation';
     return `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Your contact details</h1>
       <div class="space-y-8">
@@ -380,7 +388,11 @@ const PAGES = {
           ${GovBB.emailField('corp-contact-email', 'Contact person\'s email address')}
           ${GovBB.telField('corp-contact-phone', 'Contact person\'s phone number')}
         ` : ''}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`;
   },
@@ -389,7 +401,6 @@ const PAGES = {
     const isCorp = GovBB.D['applicant-type'] === 'Corporation';
     const commDate = [GovBB.D['commencement-day'], GovBB.D['commencement-month'], GovBB.D['commencement-year']].filter(Boolean).join('/') || '—';
     return `
-    ${GovBB.backLink()}
     <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check your answers before sending your application</h1>
     <div class="space-y-10">
       <div>
@@ -423,7 +434,11 @@ const PAGES = {
           ${isCorp ? GovBB.summaryRow('Contact person phone', GovBB.D['corp-contact-phone'] || '—', 'contact-details') : ''}
         </dl>
       </div>
-      ${GovBB.continueBtn('Continue to declaration')}
+      
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue to declaration</button>
+        </div>
     </div>`;
   },
 
@@ -478,7 +493,6 @@ const PAGES = {
     return `
     <div class="space-y-6">
       <a href="#" onclick="GovBB.back(); return false;" class="inline-flex items-center gap-xs outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10 text-[1.25rem]">← Back</a>
-      ${GovBB.backLink()}
       <div class="eml-page-badge">&#9993; Applicant email &mdash; Registration of Business Name</div>
       <p class="eml-page-label">Email Templates / Applicant Emails</p>
       <h1 class="eml-page-title">Registration of Business Name &mdash; Applicant Confirmation</h1>
@@ -519,7 +533,11 @@ const PAGES = {
           </div>
         </div>
       </div>
-      ${GovBB.continueBtn('See MDA email')}
+      
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">See MDA email</button>
+        </div>
     </div>`;
   },
 
@@ -537,7 +555,6 @@ const PAGES = {
     const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
     return `
     <div class="space-y-6">
-      ${GovBB.backLink()}
       <div class="mda-page-badge">&#9993; MDA email template &mdash; Registration of Business Name</div>
       <p class="eml-page-label">Email Templates / MDA Emails</p>
       <h1 class="eml-page-title">MDA Submission Email &mdash; Registration of Business Name</h1>

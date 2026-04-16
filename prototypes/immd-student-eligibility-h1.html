@@ -133,7 +133,6 @@ const PAGES = {
     </div>`,
   'student-id': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Student details</h1>
@@ -144,12 +143,15 @@ const PAGES = {
         ${GovBB.dateField('student-dob', 'Date of birth', 'For example, 15 08 2005')}
         ${GovBB.textField('student-country-of-birth', 'Country of birth')}
         ${GovBB.textField('student-nationality', 'Nationality')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'school-info': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">School details</h1>
@@ -157,12 +159,15 @@ const PAGES = {
         ${GovBB.textField('school-name', 'Name of school')}
         ${GovBB.textField('school-address', 'School address')}
         ${GovBB.textField('school-official', 'Name of school official to be notified of the student\'s arrival')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'certification-type': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Type of certification</h1>
@@ -181,12 +186,15 @@ const PAGES = {
             }
           });
         <\/script>
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'course-details': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Course details</h1>
@@ -194,12 +202,15 @@ const PAGES = {
         ${GovBB.textField('major-field', 'Major field of study')}
         ${GovBB.textField('programme-length', 'Expected programme length', {hint: 'For example, 2 years'})}
         ${GovBB.dateField('completion-date', 'Expected completion date', 'For example, 30 06 2028')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'english-requirements': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">English language requirements</h1>
@@ -209,12 +220,15 @@ const PAGES = {
           'Student lacks proficiency and will enrol in an English language course',
           'English proficiency is not required for this programme'
         ])}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'financial-info': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Financial information</h1>
@@ -224,14 +238,17 @@ const PAGES = {
         ${GovBB.textareaField('financial-sources', 'Sources of financial support', {hint: 'For example, parental support, scholarship, personal savings', rows: 3})}
         ${GovBB.textField('total-anticipated', 'Total amount anticipated (BDS$)', {inputmode: 'numeric', hint: 'Total of tuition and living expenses'})}
         ${GovBB.emailField('contact-email', 'School email address')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
 
   'check': () => `
     <div class="space-y-8">
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check your answers before sending your application</h1>
       <div class="space-y-8">
@@ -285,7 +302,11 @@ const PAGES = {
             ${GovBB.summaryRow('School email address', GovBB.D['contact-email'] || '—', 'financial-info')}
           </dl>
         </div>
-        ${GovBB.continueBtn('Continue to declaration')}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue to declaration</button>
+        </div>
       </div>
     </div>`,
 
@@ -340,7 +361,6 @@ const PAGES = {
     return `
     <div class="space-y-6">
       <a href="#" onclick="GovBB.back(); return false;" class="inline-flex items-center gap-xs outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10 text-[1.25rem]">← Back</a>
-      ${GovBB.backLink()}
       <div class="eml-page-badge">&#9993; Applicant email &mdash; Certificate of Eligibility for Non-Immigrant Student Status (Form H-1)</div>
       <p class="eml-page-label">Email Templates / Applicant Emails</p>
       <h1 class="eml-page-title">Certificate of Eligibility for Non-Immigrant Student Status (Form H-1) &mdash; Applicant Confirmation</h1>
@@ -379,7 +399,11 @@ const PAGES = {
           </div>
         </div>
       </div>
-      ${GovBB.continueBtn('See MDA email')}
+      
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">See MDA email</button>
+        </div>
     </div>`;
   },
 
@@ -397,7 +421,6 @@ const PAGES = {
     const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
     return `
     <div class="space-y-6">
-      ${GovBB.backLink()}
       <div class="mda-page-badge">&#9993; MDA email &mdash; Certificate of Eligibility for Non-Immigrant Student Status (Form H-1)</div>
       <p class="eml-page-label">Email Templates / MDA Emails</p>
       <h1 class="eml-page-title">MDA Submission Email &mdash; Certificate of Eligibility for Non-Immigrant Student Status (Form H-1)</h1>

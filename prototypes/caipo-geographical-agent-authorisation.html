@@ -276,7 +276,6 @@ const PAGES = {
 
   'eligibility': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">About you</h1>
       <div class="space-y-8">
@@ -294,25 +293,31 @@ const PAGES = {
           <p class="font-bold text-[1.25rem]">You may not need this form</p>
           <p class="text-[1.25rem]">This form is only for matters under the Geographical Indications Act, Cap. 320. If you are not sure whether your matter falls under this Act, contact CAIPO before continuing.</p>
         </div>
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
   'appointing-party': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Your details</h1>
       <div class="space-y-8">
         <div id="error-summary-container"></div>
         ${appointingPartyFields()}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
   'agent-details': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Agent details</h1>
       <div class="space-y-8">
@@ -323,13 +328,16 @@ const PAGES = {
         ${GovBB.textField('agent-district', 'District', { hint: 'Optional — for example, Bridgetown' })}
         ${GovBB.selectField('agent-parish-country', 'Parish or country', GovBB.PARISHES.concat(['Other country']))}
         ${GovBB.emailField('contact-email', 'Your email address', { hint: 'We will send your confirmation to this address' })}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
   'proceeding-details': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">The matter or proceeding</h1>
       <div class="space-y-8">
@@ -354,13 +362,16 @@ const PAGES = {
             </label>
           </div>
         </div>
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
   'check': () => `
     <div>
-      ${GovBB.backLink()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check your answers before sending your application</h1>
       <div class="space-y-8">
 
@@ -413,7 +424,11 @@ const PAGES = {
           </dl>
         </div>
 
-        ${GovBB.continueBtn('Continue to declaration')}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue to declaration</button>
+        </div>
       </div>
     </div>`,
 
@@ -472,7 +487,6 @@ ${GovBB.checkboxItem('declaration-agree', 'I confirm that the information I have
     return `
     <div class="space-y-6">
       <a href="#" onclick="GovBB.back(); return false;" class="inline-flex items-center gap-xs outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10 text-[1.25rem]">← Back</a>
-      ${GovBB.backLink()}
       <div class="eml-page-badge">&#9993; Applicant email &mdash; Geographical Indications Agent Authorisation (Cap. 320)</div>
       <p class="eml-page-label">Email Templates / Applicant Emails</p>
       <h1 class="eml-page-title">Geographical Indications Agent Authorisation (Cap. 320) &mdash; Applicant Confirmation</h1>
@@ -513,7 +527,11 @@ ${GovBB.checkboxItem('declaration-agree', 'I confirm that the information I have
           </div>
         </div>
       </div>
-      ${GovBB.continueBtn('See MDA email')}
+      
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">See MDA email</button>
+        </div>
     </div>`;
   },
 
@@ -531,7 +549,6 @@ ${GovBB.checkboxItem('declaration-agree', 'I confirm that the information I have
     const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
     return `
     <div class="space-y-6">
-      ${GovBB.backLink()}
       <div class="mda-page-badge">&#9993; MDA email template &mdash; Geographical Indications Agent Authorisation (Cap. 320)</div>
       <p class="eml-page-label">Email Templates / MDA Emails</p>
       <h1 class="eml-page-title">MDA Submission Email &mdash; Geographical Indications Agent Authorisation (Cap. 320)</h1>

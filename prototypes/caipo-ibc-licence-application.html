@@ -383,7 +383,6 @@ const PAGES = {
     const q4 = GovBB.D['elig-financial'] || '';
     return `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check if you can apply</h1>
       <div class="space-y-8">
@@ -394,7 +393,11 @@ const PAGES = {
         ${radioGroupHtml('elig-status','What is the current status of the company?',['Already incorporated','Applying for incorporation, continuance, or registration'])}
         ${radioGroupHtml('elig-financial','Does the company plan to engage in financial services activities?',['Yes','No'])}
         ${q4 === 'Yes' ? `<div class="bg-bb-blue-10 border-l-4 border-bb-blue-40 p-s"><p class="text-[1.25rem]">Additional documents will be required for financial services companies, including an organisational chart, 3-year projected financials, and a 3-year business plan.</p></div>` : ''}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`;
   },
@@ -407,7 +410,6 @@ const PAGES = {
     const licYr = GovBB.D['licence-date-year'] || '';
     return `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Tell us about the company</h1>
       <div class="space-y-8">
@@ -439,7 +441,11 @@ const PAGES = {
           </div>
         </div>
         ${fieldWrap('financial-year-end','Financial year end',null,selectHtml('financial-year-end',fyOpts))}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`;
   },
@@ -447,7 +453,6 @@ const PAGES = {
   /* ── ASSOCIATED PARTIES ── */
   'associated-parties': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-4">Contact details for associated parties</h1>
       <p class="text-[1.25rem] mb-8">Provide contact details for each party associated with this application.</p>
@@ -457,7 +462,11 @@ const PAGES = {
         ${partyBlock('service-provider','Service provider or applicant (Registered Agent or attorney)',true,true,null)}
         ${partyBlock('auditor','Auditor',false,false,'We have not yet appointed an auditor, or an auditor is not required')}
         ${partyBlock('bankers','Local bankers',false,false,'Local bankers have not yet been identified')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
@@ -476,7 +485,6 @@ const PAGES = {
     const regEnact = GovBB.D['regulated-enactment'] || '';
     return `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-4">Business activities</h1>
       <p class="text-[1.25rem] mb-8">Choose all the types of international business activities the company plans to carry on. You must choose at least one.</p>
@@ -489,7 +497,11 @@ const PAGES = {
         ${radioGroupHtml('regulated-other','Does the company plan to carry on any business regulated under any other enactment in Barbados?',['Yes','No'])}
         ${regEnact === 'Yes' ? fieldWrap('regulated-details','Specify the enactment(s) and regulated activities',null,textareaHtml('regulated-details',3)) : ''}
         ${fieldWrap('biz-description','Describe the international business the company plans to carry on','Provide a full description of all planned international business activities, markets, and how the company will operate.',textareaHtml('biz-description',6))}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`;
   },
@@ -504,7 +516,6 @@ const PAGES = {
     const relEntBlocks = Array.from({length: reCount}, (_, i) => relEntityBlock(i)).join('');
     return `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Workforce and related entities</h1>
       <div class="space-y-8">
@@ -523,7 +534,11 @@ const PAGES = {
             <button type="button" onclick="addRepeater('re')" class="text-[1.25rem] text-bb-teal-00 underline underline-offset-2 hover:no-underline hover:text-bb-black-00">+ Add another related entity</button>
           </div>
         ` : ''}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`;
   },
@@ -534,7 +549,6 @@ const PAGES = {
     const blocks = Array.from({length: count}, (_, i) => shareholderBlock(i)).join('');
     return `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-4">Shareholders</h1>
       <p class="text-[1.25rem] mb-8">Provide details for each proposed shareholder. You must add at least one.</p>
@@ -543,7 +557,11 @@ const PAGES = {
         ${blocks}
         <button type="button" onclick="addRepeater('sh')" class="text-[1.25rem] text-bb-teal-00 underline underline-offset-2 hover:no-underline hover:text-bb-black-00">+ Add another shareholder</button>
       </div>
-      <div class="mt-8">${GovBB.continueBtn()}</div>
+      <div class="mt-8">
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div></div>
     </form>`;
   },
 
@@ -553,7 +571,6 @@ const PAGES = {
     const blocks = Array.from({length: count}, (_, i) => directorBlock(i)).join('');
     return `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-4">Directors and senior managers</h1>
       <p class="text-[1.25rem] mb-8">Provide details for each proposed director and senior manager. You must add at least one.</p>
@@ -573,7 +590,6 @@ const PAGES = {
   /* ── FIT AND PROPER ── */
   'fit-proper': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-4">Fit and proper declarations</h1>
       <p class="text-[1.25rem] mb-8">These questions are about the company and its directors, shareholders, and senior managers. Answer honestly — making a false declaration is a criminal offence.</p>
@@ -583,7 +599,11 @@ const PAGES = {
         ${fitProperQ(25,'Has an application for a licence or authorisation by the company, or any proposed director, shareholder, or senior manager, ever been refused by a regulatory authority?')}
         ${fitProperQ(26,'Has the company, or any proposed director, shareholder, or senior manager, ever been subject to disciplinary measures by a professional or regulatory body?')}
         ${fitProperQ(27,'Is the company, or any proposed director, shareholder, or senior manager, currently under investigation by any regulatory or law enforcement authority?')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
@@ -616,7 +636,6 @@ const PAGES = {
       .join('; ') || 'None selected';
 
     return `
-    ${GovBB.backLink()}
     <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check your answers before sending your application</h1>
     <div class="space-y-8">
       ${summarySection('Eligibility', `
@@ -661,7 +680,11 @@ const PAGES = {
         ${row('Disciplinary measures?', GovBB.D['fp-q26'], 'fit-proper')}
         ${row('Currently under investigation?', GovBB.D['fp-q27'], 'fit-proper')}
       `)}
-      ${GovBB.continueBtn('Continue to declaration')}
+      
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue to declaration</button>
+        </div>
     </div>`;
   },
 
@@ -734,7 +757,6 @@ const PAGES = {
     return `
     <div class="space-y-6">
       <a href="#" onclick="GovBB.back(); return false;" class="inline-flex items-center gap-xs outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10 text-[1.25rem]">← Back</a>
-      ${GovBB.backLink()}
       <div class="eml-page-badge">&#9993; Applicant email &mdash; Form 1 — Application for a Licence as an International Business Company</div>
       <p class="eml-page-label">Email Templates / Applicant Emails</p>
       <h1 class="eml-page-title">Form 1 — IBC Licence Application &mdash; Applicant Confirmation</h1>
@@ -776,7 +798,11 @@ const PAGES = {
           </div>
         </div>
       </div>
-      ${GovBB.continueBtn('See MDA email')}
+      
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">See MDA email</button>
+        </div>
     </div>`;
   },
 
@@ -794,7 +820,6 @@ const PAGES = {
     const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
     return `
     <div class="space-y-6">
-      ${GovBB.backLink()}
       <div class="mda-page-badge">&#9993; MDA email template &mdash; Form 1 — IBC Licence Application</div>
       <p class="eml-page-label">Email Templates / MDA Emails</p>
       <h1 class="eml-page-title">MDA Submission Email &mdash; Form 1 — IBC Licence Application</h1>

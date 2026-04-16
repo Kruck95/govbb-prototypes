@@ -203,7 +203,6 @@ const PAGES = {
 
     return `
       <form novalidate>
-        ${GovBB.backLink()}
         ${GovBB.caption()}
         <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check if you can apply</h1>
         <div class="space-y-8">
@@ -226,7 +225,6 @@ const PAGES = {
 
     return `
       <form novalidate>
-        ${GovBB.backLink()}
         ${GovBB.caption()}
         <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Your details</h1>
         <div class="space-y-8">
@@ -240,7 +238,11 @@ const PAGES = {
           ${GovBB.telField('phone', 'Telephone number', { hint: 'For example, 246-555-1234' })}
           ${GovBB.telField('cell', 'Mobile number', { hint: 'Optional — leave blank if you do not have one' })}
           ${GovBB.emailField('email', 'Email address', { hint: 'We will use this to send you a confirmation' })}
-          ${GovBB.continueBtn()}
+          
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
         </div>
       </form>`;
   },
@@ -248,7 +250,6 @@ const PAGES = {
   /* ── Land use details ── */
   'land-use': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Details of the land you want to use</h1>
       <div class="space-y-8">
@@ -257,7 +258,11 @@ const PAGES = {
         ${GovBB.textareaField('proposed-activities', 'What do you plan to do on the land?', { hint: 'Describe your proposed activities' })}
         ${GovBB.dateField('start-date', 'Start date', 'For example, 01 06 2026')}
         ${GovBB.dateField('end-date', 'End date', 'For example, 31 12 2026')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
@@ -269,7 +274,6 @@ const PAGES = {
     const endDate = [D['end-date-day'], D['end-date-month'], D['end-date-year']].filter(Boolean).join(' ');
 
     return `
-      ${GovBB.backLink()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check your answers before sending your application</h1>
       <div class="space-y-10">
 
@@ -307,7 +311,11 @@ const PAGES = {
           </dl>
         </section>
 
-        ${GovBB.continueBtn('Continue to declaration')}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue to declaration</button>
+        </div>
       </div>`;
   },
 
@@ -409,7 +417,11 @@ const PAGES = {
         </div>
       </div>
       <div class="mt-8">
-        ${GovBB.continueBtn('View MDA email')}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">View MDA email</button>
+        </div>
       </div>
     </div>`,
 

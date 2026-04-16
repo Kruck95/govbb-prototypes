@@ -146,7 +146,6 @@ const PAGES = {
 
   'personal-details': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Your personal details</h1>
       <div class="space-y-8">
@@ -163,13 +162,16 @@ const PAGES = {
         ${GovBB.telField('tel', 'Telephone number', { hint: 'Include area code. For example, 246-555-1234. At least one of telephone or mobile is required.' })}
         ${GovBB.telField('cell', 'Mobile number', { hint: 'Include area code. For example, 246-555-1234. At least one of telephone or mobile is required.' })}
         ${GovBB.dateField('dob', 'Date of birth', 'For example, 27 03 1955')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
   'benefit-type': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Which benefit do you receive?</h1>
       <div class="space-y-8">
@@ -178,13 +180,16 @@ const PAGES = {
           "Survivors' or Death Benefit",
           'Disablement Benefit'
         ], { hint: 'Choose the benefit you are submitting this certificate for.' })}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
   'survivors-question': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Have you remarried or cohabitated since your last certificate?</h1>
       <div class="space-y-8">
@@ -193,7 +198,11 @@ const PAGES = {
         <div id="remarried-date-group" style="display:none;">
           ${GovBB.dateField('remarried-date', 'Date of marriage or cohabitation', 'For example, 15 06 2024')}
         </div>
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
@@ -202,7 +211,6 @@ const PAGES = {
     const isSurvivors = D['benefit-type'] === "Survivors' or Death Benefit";
     return `
     <div>
-      ${GovBB.backLink()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check your answers before sending your certificate</h1>
       <div class="space-y-10">
         <div>
@@ -229,7 +237,11 @@ const PAGES = {
           </dl>
         </div>
       </div>
-      ${GovBB.continueBtn()}
+      
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
     </div>`;
   },
 
@@ -295,7 +307,6 @@ const PAGES = {
     return `
     <div class="space-y-6">
       <a href="#" onclick="GovBB.back(); return false;" class="inline-flex items-center gap-xs outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10 text-[1.25rem]">← Back</a>
-      ${GovBB.backLink()}
       <p class="border-bb-blue-40 border-l-4 py-xs pl-s text-bb-mid-grey-00">Email preview — sent to applicant</p>
       <div class="email-wrapper border border-bb-grey-00">
         <div class="email-header-bar">
@@ -331,7 +342,11 @@ const PAGES = {
           </div>
         </div>
       </div>
-      <div class="mt-8">${GovBB.continueBtn('See MDA email')}</div>
+      <div class="mt-8">
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">See MDA email</button>
+        </div></div>
     </div>`;
   },
 
@@ -341,7 +356,6 @@ const PAGES = {
     const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
     return `
     <div class="space-y-6">
-      ${GovBB.backLink()}
       <p class="border-bb-blue-40 border-l-4 py-xs pl-s text-bb-mid-grey-00">Email preview — sent to NIS staff</p>
       <div class="mda-email border border-bb-grey-00">
         <div class="mda-header">

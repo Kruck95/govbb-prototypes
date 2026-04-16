@@ -132,7 +132,6 @@ const PAGES = {
     </div>`,
   'non-immigrant-info': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Non-immigrant details</h1>
@@ -149,12 +148,15 @@ const PAGES = {
         ${GovBB.radioGroup('marital-status', 'Marital status', ['Single', 'Married', 'Divorced', 'Widowed', 'Separated'])}
         ${GovBB.dateField('dob', 'Date of birth', 'For example, 15 06 1985')}
         ${GovBB.textField('nationality', 'Nationality')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'birthplace': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Place of birth</h1>
@@ -162,12 +164,15 @@ const PAGES = {
         ${GovBB.textField('city-of-birth', 'City or town of birth')}
         ${GovBB.textField('province-of-birth', 'Province or state of birth', {hint: 'Leave blank if not applicable'})}
         ${GovBB.textField('country-of-birth', 'Country of birth')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'application-type-page': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Type of application</h1>
@@ -186,12 +191,15 @@ const PAGES = {
             }
           });
         <\/script>
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'employer-info': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Employer and organisation details</h1>
@@ -202,12 +210,15 @@ const PAGES = {
         ${GovBB.textField('employer-country', 'Country')}
         ${GovBB.telField('employer-telephone', 'Telephone number')}
         ${GovBB.textField('employer-working-address', 'Working address if different from above', {hint: 'Leave blank if same as above'})}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'organisation-details': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Organisation details</h1>
@@ -215,12 +226,15 @@ const PAGES = {
         ${GovBB.textField('annual-income', 'Annual sales or income (BDS$)', {inputmode: 'numeric'})}
         ${GovBB.textField('total-employees', 'Total number of employees', {inputmode: 'numeric', width: '8rem'})}
         ${GovBB.textareaField('business-description', 'Brief description of the business', {rows: 3})}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'employment-details': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Employment details</h1>
@@ -229,12 +243,15 @@ const PAGES = {
         ${GovBB.dateField('start-date', 'Proposed start date', 'For example, 01 09 2026')}
         ${GovBB.dateField('end-date', 'Proposed end date', 'For example, 31 12 2026')}
         ${GovBB.textField('positions-to-fill', 'Number of positions to be filled', {inputmode: 'numeric', width: '8rem'})}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'job-description': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Job description</h1>
@@ -245,12 +262,15 @@ const PAGES = {
         ${GovBB.textField('pay-basic-rate', 'Basic pay (BDS$)', {inputmode: 'decimal', width: '12rem'})}
         ${GovBB.selectField('pay-basic-period', 'Pay period', ['Per hour', 'Per day', 'Per week', 'Per fortnight', 'Per month'])}
         ${GovBB.radioGroup('live-at-workplace', 'Does the role require the applicant to live at the workplace?', ['Yes', 'No'])}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'education-requirements': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Education requirements</h1>
@@ -268,36 +288,45 @@ const PAGES = {
             }
           });
         <\/script>
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'training-experience': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Training and experience requirements</h1>
       <div class="space-y-8">
         ${GovBB.textareaField('training-required', 'Type and duration of training required', {hint: 'Leave blank if none required', rows: 3})}
         ${GovBB.textField('experience-years', 'Years of experience required', {inputmode: 'numeric', width: '8rem', hint: 'Enter 0 if none'})}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'qualifications': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Applicant qualifications</h1>
       <div class="space-y-8">
         ${GovBB.textareaField('qualifications', 'Describe your qualifications, skills, and any professional licences', {rows: 4})}
         ${GovBB.textareaField('work-history', 'List your work history for the past 3 years', {hint: 'Include: employer name and address, job title, dates, kind of business, main duties', rows: 5})}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
   'supervision': () => `
     <form novalidate>
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Supervision</h1>
@@ -308,14 +337,17 @@ const PAGES = {
         ${GovBB.textField('employer-signatory-name', 'Full name of employer signatory')}
         ${GovBB.textField('employer-signatory-title', 'Title of employer signatory', {hint: 'For example, Director, Owner'})}
         ${GovBB.emailField('contact-email', 'Email address')}
-        ${GovBB.continueBtn()}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue</button>
+        </div>
       </div>
     </form>`,
 
 
   'check': () => `
     <div class="space-y-8">
-      ${GovBB.backLink()}
       ${GovBB.caption()}
       <h1 class="font-bold text-[3.5rem] leading-[1.15] mb-8">Check your answers before sending your application</h1>
       <div class="space-y-8">
@@ -423,7 +455,11 @@ const PAGES = {
             ${GovBB.summaryRow('Email address', GovBB.D['contact-email'] || '—', 'supervision')}
           </dl>
         </div>
-        ${GovBB.continueBtn('Continue to declaration')}
+        
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">Continue to declaration</button>
+        </div>
       </div>
     </div>`,
 
@@ -478,7 +514,6 @@ const PAGES = {
     return `
     <div class="space-y-6">
       <a href="#" onclick="GovBB.back(); return false;" class="inline-flex items-center gap-xs outline-none underline-offset-2 underline hover:no-underline text-bb-teal-00 hover:text-bb-black-00 hover:bg-bb-teal-10 text-[1.25rem]">← Back</a>
-      ${GovBB.backLink()}
       <div class="eml-page-badge">&#9993; Applicant email &mdash; Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment</div>
       <p class="eml-page-label">Email Templates / Applicant Emails</p>
       <h1 class="eml-page-title">Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment &mdash; Applicant Confirmation</h1>
@@ -518,7 +553,11 @@ const PAGES = {
           </div>
         </div>
       </div>
-      ${GovBB.continueBtn('See MDA email')}
+      
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <button type="button" onclick="back()" class="relative inline-flex items-center justify-center gap-2 text-[20px] whitespace-nowrap transition-[background-color,box-shadow] duration-200 outline-none bg-bb-white-00 text-bb-black-00 border-2 border-bb-black-00 hover:bg-bb-grey-00 active:bg-bb-grey-00 px-xm py-s rounded-sm leading-[1.7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-offset-1 focus-visible:ring-bb-teal-100">Back</button>
+          <button type="button" onclick="next()" class="${GovBB.BTN_CLS}">See MDA email</button>
+        </div>
     </div>`;
   },
 
@@ -536,7 +575,6 @@ const PAGES = {
     const dr = (label, value) => `<div class="mda-data-row"><div class="mda-data-label">${label}</div><div class="mda-data-value">${value || '&mdash;'}</div></div>`;
     return `
     <div class="space-y-6">
-      ${GovBB.backLink()}
       <div class="mda-page-badge">&#9993; MDA email &mdash; Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment</div>
       <p class="eml-page-label">Email Templates / MDA Emails</p>
       <h1 class="eml-page-title">MDA Submission Email &mdash; Application for Work Permit / Extension / Job Offer for Non-Immigrant Employment</h1>
