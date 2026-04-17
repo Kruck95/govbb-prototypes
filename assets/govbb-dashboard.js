@@ -40,6 +40,7 @@
     /* SEA */
     'prototypes/nab-seniors-recreational-activities.html': { mda: 'sea', type: 'application' },
     'prototypes/nab-home-care-programme.html':             { mda: 'sea', type: 'application' },
+    'prototypes/nab-community-elder-care.html':            { mda: 'sea', type: 'application' },
     /* CAIPO */
     'prototypes/caipo-company-name-search.html':               { mda: 'caipo', type: 'search'      },
     'prototypes/caipo-srl-name-search.html':                   { mda: 'caipo', type: 'search'      },
