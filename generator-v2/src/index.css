@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    font-family: Figtree, -apple-system, system-ui, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
+    background: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+  }
+}
+
+@layer components {
+  /* Brand chrome container: 1200px, matches every citizen prototype */
+  .govbb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  /* Tool surface container: wider to fit the three-pane workspace */
+  .tool-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  /* Visually hidden for screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
